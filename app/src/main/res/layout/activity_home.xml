@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity"
+    android:id="@+id/drawerLayout"
+    android:background="@color/white"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="25dp"
+        app:menu="@menu/sidebar_menu"
+        app:itemTextColor="@color/blue_002"
+        android:background="@drawable/bg_sidebar"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/sidebar_header">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="223dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ilustrasi_awan"/>
+
+            <ImageView
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="310dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ilustrasi_awan"/>
+
+            <ImageView
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ilustrasi_sepeda"/>
+
+        </RelativeLayout>
+
+    </com.google.android.material.navigation.NavigationView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ilustrasi_kanan"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ilustrasi_kiri"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSidebar"
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="32dp"
+                    android:background="@drawable/ic_sidebar"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imgProfile"
+                    android:layout_width="61dp"
+                    android:layout_height="61dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="42dp"
+                    android:background="@drawable/bg_profile_rounded"
+                    android:elevation="4dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/sectTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="46dp"
+                    android:layout_marginEnd="28dp"
+                    android:orientation="vertical"
+                    app:layout_constraintLeft_toRightOf="@id/btnSidebar"
+                    app:layout_constraintRight_toLeftOf="@id/imgProfile"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/namaPengguna"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Halo, Ibu Sri"
+                        android:textColor="@color/blue_002"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Semoga harimu menyenangkan"
+                        android:textColor="#2C3E50"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textJadwal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="64dp"
+                    android:text="Jadwal Minum Obat"
+                    android:textColor="@color/blue_002"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sectTitle" />
+
+                <LinearLayout
+                    android:id="@+id/sectTgl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="7dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textJadwal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_date" />
+
+                    <TextView
+                        android:id="@+id/tvTgl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:text="06 Oktober 2021"
+                        android:textColor="@color/blue_002"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardPagi"
+                    android:layout_width="113dp"
+                    android:layout_height="87dp"
+                    android:layout_marginTop="11dp"
+                    android:elevation="4dp"
+                    app:cardBackgroundColor="#B8C7C8"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/cardSiang"
+                    app:layout_constraintTop_toBottomOf="@id/sectTgl">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvSiang"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="11dp"
+                            android:text="Pagi"
+                            android:textColor="@color/blue_002"
+                            android:textSize="14sp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvPagi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="9dp"
+                            tools:itemCount="2" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardSiang"
+                    android:layout_width="113dp"
+                    android:layout_height="87dp"
+                    android:layout_marginTop="11dp"
+                    android:elevation="4dp"
+                    app:cardBackgroundColor="#B8C7C8"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sectTgl">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvPagi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="11dp"
+                            android:text="Siang"
+                            android:textColor="@color/blue_002"
+                            android:textSize="14sp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rcView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="9dp"
+                            tools:itemCount="2" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardMalam"
+                    android:layout_width="113dp"
+                    android:layout_height="87dp"
+                    android:layout_marginTop="11dp"
+                    android:elevation="4dp"
+                    app:cardBackgroundColor="#B8C7C8"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintLeft_toRightOf="@id/cardSiang"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sectTgl">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvMalam"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="11dp"
+                            android:text="Malam"
+                            android:textColor="@color/blue_002"
+                            android:textSize="14sp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvMalam"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="9dp"
+                            tools:itemCount="2" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="21dp"
+                    android:text="Bagaimana kesehatanmu hari ini ?"
+                    android:textColor="@color/blue_002"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cardPagi" />
+
+                <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                    android:id="@+id/progressSleep"
+                    android:layout_width="123dp"
+                    android:layout_height="123dp"
+                    android:layout_marginStart="58dp"
+                    android:layout_marginTop="17dp"
+                    app:cpb_background_progressbar_color="#B8C7C8"
+                    app:cpb_background_progressbar_width="10dp"
+                    app:cpb_progress="80"
+                    app:cpb_progressbar_color="#E74C3C"
+                    app:cpb_progressbar_width="12dp"
+                    app:cpb_round_border="true"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/progressDrink"
+                    app:layout_constraintTop_toBottomOf="@id/text2" />
+
+                <TextView
+                    android:id="@+id/indicatorSleep"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6j 34m"
+                    android:textColor="@color/blue_002"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@id/progressSleep"
+                    app:layout_constraintLeft_toLeftOf="@id/progressSleep"
+                    app:layout_constraintRight_toRightOf="@id/progressSleep"
+                    app:layout_constraintTop_toTopOf="@id/progressSleep" />
+
+                <TextView
+                    android:id="@+id/tvSleep"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="19dp"
+                    android:text="Tidur"
+                    android:textColor="@color/blue_002"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toLeftOf="@id/progressSleep"
+                    app:layout_constraintRight_toRightOf="@id/progressSleep"
+                    app:layout_constraintTop_toBottomOf="@id/progressSleep" />
+
+                <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                    android:id="@+id/progressDrink"
+                    android:layout_width="123dp"
+                    android:layout_height="123dp"
+                    android:layout_marginStart="46dp"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginEnd="58dp"
+                    app:cpb_background_progressbar_color="#B8C7C8"
+                    app:cpb_background_progressbar_width="10dp"
+                    app:cpb_progress="80"
+                    app:cpb_progressbar_color="#3498DB"
+                    app:cpb_progressbar_width="12dp"
+                    app:cpb_round_border="true"
+                    app:layout_constraintLeft_toRightOf="@id/progressSleep"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text2" />
+
+                <LinearLayout
+                    android:id="@+id/sectDrink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="@id/progressDrink"
+                    app:layout_constraintLeft_toLeftOf="@id/progressDrink"
+                    app:layout_constraintRight_toRightOf="@id/progressDrink"
+                    app:layout_constraintTop_toTopOf="@id/progressDrink">
+
+                    <TextView
+                        android:id="@+id/indicatorDrink"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="3dp"
+                        android:text="3"
+                        android:textColor="@color/blue_002"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="@id/progressDrink"
+                        app:layout_constraintLeft_toLeftOf="@id/progressDrink"
+                        app:layout_constraintRight_toRightOf="@id/icDrink"
+                        app:layout_constraintTop_toTopOf="@id/progressDrink" />
+
+                    <ImageView
+                        android:id="@+id/icDrink"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_glass"
+                        app:layout_constraintBottom_toBottomOf="@id/progressDrink"
+                        app:layout_constraintLeft_toRightOf="@id/indicatorDrink"
+                        app:layout_constraintRight_toRightOf="@id/progressDrink"
+                        app:layout_constraintTop_toTopOf="@id/progressDrink" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvDrink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="19dp"
+                    android:text="Minum"
+                    android:textColor="@color/blue_002"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toLeftOf="@id/progressDrink"
+                    app:layout_constraintRight_toRightOf="@id/progressDrink"
+                    app:layout_constraintTop_toBottomOf="@id/progressDrink" />
+
+                <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                    android:id="@+id/progressFisik"
+                    android:layout_width="123dp"
+                    android:layout_height="123dp"
+                    android:layout_marginTop="25dp"
+                    app:cpb_background_progressbar_color="#B8C7C8"
+                    app:cpb_background_progressbar_width="10dp"
+                    app:cpb_progress="80"
+                    app:cpb_progressbar_color="#2ECC71"
+                    app:cpb_progressbar_width="12dp"
+                    app:cpb_round_border="true"
+                    app:layout_constraintLeft_toLeftOf="@id/progressSleep"
+                    app:layout_constraintRight_toRightOf="@id/progressSleep"
+                    app:layout_constraintTop_toBottomOf="@id/tvSleep" />
+
+                <TextView
+                    android:id="@+id/indicatorFisik"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="90 %"
+                    android:textColor="@color/blue_002"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@id/progressFisik"
+                    app:layout_constraintLeft_toLeftOf="@id/progressFisik"
+                    app:layout_constraintRight_toRightOf="@id/progressFisik"
+                    app:layout_constraintTop_toTopOf="@id/progressFisik" />
+
+                <TextView
+                    android:id="@+id/tvFisik"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="19dp"
+                    android:text="Fisik"
+                    android:textColor="@color/blue_002"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toLeftOf="@id/progressFisik"
+                    app:layout_constraintRight_toRightOf="@id/progressFisik"
+                    app:layout_constraintTop_toBottomOf="@id/progressFisik" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvFisik" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        <include
+            android:id="@+id/bottomSubmenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            layout="@layout/bottom_track_submenu"
+            android:layout_above="@id/bottomNavBar"
+            android:layout_alignEnd="@id/bottomNavBar"
+            android:layout_marginEnd="32dp"
+            android:visibility="gone"/>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavBar"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            app:itemIconTint="@color/white"
+            app:itemTextColor="@color/white"
+            android:background="@drawable/bg_bottom_nav"
+            app:backgroundTint="#27AE60"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:elevation="4dp"
+            app:itemRippleColor="@color/blue_002"
+            app:menu="@menu/bottom_nav_menu"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

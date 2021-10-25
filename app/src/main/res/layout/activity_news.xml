@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/sectTitle"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/bg_bottom_nav"
+            android:backgroundTint="@color/green_002">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="22dp"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="News"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/sectArticle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ARTICLE FOR YOU"
+            android:textColor="@color/grey_001"
+            android:textAllCaps="true"
+            android:textSize="15sp"
+            android:layout_below="@id/sectTitle"
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="23dp"/>
+
+        <TextView
+            android:id="@+id/btnSeeAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SEE ALL"
+            android:textAllCaps="true"
+            android:textSize="13sp"
+            android:textColor="@color/blue_002"
+            android:layout_below="@id/sectTitle"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="31dp"
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="23dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvArticle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sectArticle"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            tools:listitem="@layout/item_article_layout"
+            tools:itemCount="3"/>
+
+        <TextView
+            android:id="@+id/sectToday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Today"
+            android:textAllCaps="true"
+            android:textSize="15sp"
+            android:textColor="@color/grey_001"
+            android:layout_below="@id/rvArticle"
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="23dp"/>
+
+        <TextView
+            android:id="@+id/btnSeeAllToday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SEE ALL"
+            android:textColor="@color/blue_002"
+            android:textAllCaps="true"
+            android:textSize="13sp"
+            android:layout_below="@id/rvArticle"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="31dp"
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="23dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRedaksi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sectToday"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            tools:listitem="@layout/list_item_redaksi"/>
+
+    </RelativeLayout>
+
+</ScrollView>

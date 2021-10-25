@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="29dp">
+
+    <ImageView
+        android:id="@+id/imgRedaksi"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/bg_card_10"
+        android:backgroundTint="@color/grey_001"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toEndOf="@id/imgRedaksi"
+        android:layout_alignTop="@id/imgRedaksi"
+        android:layout_alignBottom="@id/imgRedaksi"
+        android:gravity="center"
+        android:layout_marginStart="22dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama Redaksi"
+            android:textSize="16sp"
+            android:textColor="@color/blue_002"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="From Subscribe"
+            android:textSize="15sp"
+            android:textColor="@color/grey_002"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_dot"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"/>
+
+</RelativeLayout>

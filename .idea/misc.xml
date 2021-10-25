@@ -3,7 +3,34 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_main.xml" value="0.12771739130434784" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/drawable/bg_bottom_nav.xml" value="0.19444444444444445" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/drawable/bg_bottom_track_submenu.xml" value="0.19907407407407407" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/drawable/bg_button_1.xml" value="0.19907407407407407" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/drawable/bg_card_10.xml" value="0.19444444444444445" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/drawable/bg_card_10_outline.xml" value="0.1925925925925926" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/drawable/bg_card_10px.xml" value="0.20092592592592592" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/drawable/bg_edit_text.xml" value="0.19907407407407407" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/drawable/bg_item_rounded_15.xml" value="0.1962962962962963" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/drawable/bg_item_sidebar.xml" value="0.15208333333333332" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/drawable/bg_profile_rounded.xml" value="0.20092592592592592" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/drawable/bg_sidebar.xml" value="0.14930555555555555" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/drawable/bg_sidebar_header.xml" value="0.14930555555555555" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_add_symptom.xml" value="0.22" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_edit_symptom.xml" value="0.2" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_home.xml" value="0.22" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_news.xml" value="0.22" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_setting.xml" value="0.22" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_symptom.xml" value="0.18" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/bottom_track_submenu.xml" value="0.75" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/item_article_layout.xml" value="0.22" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/item_sidebar.xml" value="0.16847826086956522" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/list_item_redaksi.xml" value="0.38694638694638694" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/sidebar_header.xml" value="0.13080601092896174" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/menu/sidebar_header.xml" value="0.153125" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/menu/sidebar_menu.xml" value="0.153125" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/menu/track_submenu.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

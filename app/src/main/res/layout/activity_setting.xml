@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/sectTitle"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:background="@drawable/bg_bottom_nav"
+            android:backgroundTint="@color/green_002"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="22dp">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_back"
+                android:padding="22dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:textSize="24sp"
+                android:textColor="@color/white"
+                android:layout_centerInParent="true"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:background="@drawable/bg_profile_rounded"
+            android:backgroundTint="@color/green_001"
+            android:layout_below="@id/sectTitle"
+            android:layout_centerHorizontal="true"
+            android:elevation="4dp"
+            android:layout_marginTop="55dp"/>
+
+        <TextView
+            android:id="@+id/btnEditProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Avatar"
+            android:textSize="14sp"
+            android:textColor="@color/blue_002"
+            android:layout_below="@id/imgProfile"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp"/>
+
+        <EditText
+            android:id="@+id/editNama"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_below="@id/btnEditProfile"
+            android:textSize="14sp"
+            android:text="Nama"
+            android:inputType="text"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_edit_text"
+            android:layout_marginStart="92dp"
+            android:layout_marginEnd="92dp"
+            android:paddingStart="9dp"/>
+
+        <EditText
+            android:id="@+id/editEmail"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_below="@id/editNama"
+            android:textSize="14sp"
+            android:text="email@gmail.com"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_edit_text"
+            android:layout_marginStart="92dp"
+            android:layout_marginEnd="92dp"
+            android:paddingStart="9dp"/>
+
+        <EditText
+            android:id="@+id/editNumHp"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_below="@id/editEmail"
+            android:textSize="14sp"
+            android:text="088888888"
+            android:inputType="number"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_edit_text"
+            android:layout_marginStart="92dp"
+            android:layout_marginEnd="92dp"
+            android:paddingStart="9dp"/>
+
+        <EditText
+            android:id="@+id/editPasswordLama"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_below="@id/editNumHp"
+            android:textSize="14sp"
+            android:hint="Kata Sandi Dahulu"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_edit_text"
+            android:layout_marginStart="92dp"
+            android:layout_marginEnd="92dp"
+            android:paddingStart="9dp"/>
+
+        <EditText
+            android:id="@+id/editPasswordBaru"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_below="@id/editPasswordLama"
+            android:textSize="14sp"
+            android:hint="Kata Sandi Baru"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_edit_text"
+            android:layout_marginStart="92dp"
+            android:layout_marginEnd="92dp"
+            android:paddingStart="9dp"/>
+        
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_button_1"
+            android:text="Simpan"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:layout_below="@id/editPasswordBaru"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"/>
+
+    </RelativeLayout>
+
+</ScrollView>

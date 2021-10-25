@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditSymptomActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/sectEditGejala"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/bg_bottom_nav"
+            android:backgroundTint="@color/green_002">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Edit Gejala"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/btnTambah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="29dp"
+                android:src="@drawable/ic_trash" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/sectSearch"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:layout_below="@id/sectEditGejala"
+            android:background="@color/green_001"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/inputGejala"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginStart="23dp"
+                android:layout_marginEnd="23dp"
+                android:paddingStart="19dp"
+                android:text="gejala"
+                android:textSize="14sp"
+                android:background="@drawable/bg_profile_rounded"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/sectSearch"
+            android:layout_marginTop="10dp"
+            android:paddingStart="23dp"
+            android:paddingEnd="23dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="34dp"
+                android:background="@drawable/bg_item_rounded_15"
+                android:elevation="4dp"
+                android:text="Ringan"
+                android:textSize="16sp"
+                android:textAllCaps="false"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="34dp"
+                android:elevation="4dp"
+                android:background="@drawable/bg_item_rounded_15"
+                android:text="Sedang"
+                android:textSize="16sp"
+                android:textAllCaps="false"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:elevation="4dp"
+                android:background="@drawable/bg_item_rounded_15"
+                android:text="Tinggi"
+                android:textSize="16sp"
+                android:textAllCaps="false"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/secInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnGroup"
+            android:layout_marginTop="17dp"
+            android:layout_marginStart="23dp"
+            android:layout_marginEnd="23dp"
+            android:paddingStart="26dp"
+            android:paddingEnd="26dp"
+            android:paddingTop="18dp"
+            android:paddingBottom="18dp"
+            android:background="@drawable/bg_card_10_outline">
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/cbPagi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pagi (6-10 am)"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/cbSiang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="22dp"
+                android:text="Siang (10-3 am)"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/cbSore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cbPagi"
+                android:layout_alignStart="@id/cbPagi"
+                android:text="Sore (3-7 pm)"
+                android:textSize="14sp"/>
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/cbMalam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cbSiang"
+                android:layout_alignLeft="@id/cbSiang"
+                android:text="Malam (7-00 pm)"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/imgNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_note"
+                android:layout_below="@id/cbSore"
+                android:layout_marginTop="27dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_toRightOf="@id/imgNote"
+                android:layout_alignTop="@id/imgNote"
+                android:layout_marginStart="7dp"
+                android:layout_alignBottom="@id/imgNote">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/white"
+                    android:textSize="12sp"
+                    android:textColor="@color/grey_001"
+                    android:hint="Tambah Catatan"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ketuk untuk atur tanggal"
+            android:textSize="12sp"
+            android:layout_below="@id/secInput"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="15dp"/>
+
+        <ImageView
+            android:id="@+id/btnTanggal"
+            android:layout_width="68dp"
+            android:layout_height="55dp"
+            android:src="@drawable/ic_date"
+            android:layout_below="@id/tvDate"
+            android:layout_alignStart="@id/tvDate"
+            android:layout_alignEnd="@id/tvDate"
+            app:tint="@color/green_001" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnBatal"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:text="Batalkan"
+            android:textAllCaps="false"
+            android:background="@drawable/bg_card_10"
+            android:backgroundTint="@color/white"
+            android:layout_below="@id/btnTanggal"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="84dp"
+            android:elevation="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSimpan"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:text="Simpan"
+            android:textAllCaps="false"
+            android:background="@drawable/bg_card_10"
+            android:backgroundTint="@color/white"
+            android:layout_below="@id/btnTanggal"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="84dp"
+            android:elevation="4dp"/>
+
+    </RelativeLayout>
+
+</ScrollView>
