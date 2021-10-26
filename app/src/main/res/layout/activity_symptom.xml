@@ -78,8 +78,33 @@
                 android:id="@+id/rcView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/sectSearch"/>
+                android:layout_below="@id/sectSearch"
+                tools:listitem="@layout/list_item_symptom"/>
 
+            <LinearLayout
+                android:id="@+id/sectTvRiwayat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@id/sectSearch"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Belum ada riwayat disini"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blue_002"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hi, kamu belum menambahkan gejala"/>
+
+            </LinearLayout>
 
         </RelativeLayout>
 

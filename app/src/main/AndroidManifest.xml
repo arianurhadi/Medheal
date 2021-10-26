@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Medheal">
         <activity
+            android:name=".DetailDrugActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DrugActivity"
+            android:exported="false" />
+        <activity
             android:name=".EditSymptomActivity"
             android:exported="false" />
         <activity

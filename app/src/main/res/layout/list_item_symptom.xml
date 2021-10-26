@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_card_10_outline_green"
+    android:layout_marginTop="20dp"
+    android:layout_marginStart="18dp"
+    android:layout_marginEnd="18dp"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp"
+    android:paddingStart="18dp"
+    android:paddingEnd="18dp">
+
+    <TextView
+        android:id="@+id/tvTanggal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tanggal"
+        android:textSize="14sp"
+        android:textColor="@color/blue_002"/>
+
+    <TextView
+        android:id="@+id/tvNamaGejala"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama Gejala"
+        android:textSize="14sp"
+        android:textColor="@color/blue_002"
+        android:layout_below="@id/tvTanggal"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/tvTingkat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama Gejala"
+        android:textSize="14sp"
+        android:textColor="@color/blue_002"
+        android:layout_below="@id/tvNamaGejala"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/tvCatatan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Catatan"
+        android:textSize="14sp"
+        android:textColor="@color/blue_002"
+        android:layout_below="@id/tvTingkat"
+        android:layout_marginTop="10dp"/>
+
+    <ImageView
+        android:id="@+id/imgTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_history"
+        android:layout_toEndOf="@id/tvTanggal"
+        android:layout_marginStart="50dp"/>
+
+    <TextView
+        android:id="@+id/tvWaktu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Waktu"
+        android:textSize="14sp"
+        android:textColor="@color/blue_002"
+        android:layout_toEndOf="@id/imgTime"
+        android:layout_marginStart="5dp"/>
+
+</RelativeLayout>
