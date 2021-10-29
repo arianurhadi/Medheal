@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Medheal">
         <activity
+            android:name=".DaftarActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ForgotpasswordActivity"
+            android:exported="true" />
+        <activity
+            android:name=".OpeningActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Onboarding"
+            android:exported="true" />
+        <activity
             android:name=".DetailDrugActivity"
             android:exported="false" />
         <activity
