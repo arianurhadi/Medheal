@@ -475,18 +475,18 @@
             android:id="@+id/bottomNavBar"
             android:layout_width="match_parent"
             android:layout_height="58dp"
-            app:itemIconTint="@color/white"
-            app:itemTextColor="@color/white"
-            android:background="@drawable/bg_bottom_nav"
-            app:backgroundTint="#27AE60"
+            android:layout_alignParentBottom="true"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_bottom_nav"
+            android:elevation="4dp"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
-            android:elevation="4dp"
+            app:backgroundTint="#27AE60"
+            app:itemIconTint="@color/white"
             app:itemRippleColor="@color/blue_002"
-            app:menu="@menu/bottom_nav_menu"
-            android:layout_alignParentBottom="true"/>
+            app:itemTextColor="@color/white"
+            app:menu="@menu/bottom_nav_menu" />
 
     </RelativeLayout>
 
