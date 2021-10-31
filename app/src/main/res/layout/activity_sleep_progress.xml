@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SleepProgressActivity"
+    android:background="@color/blue_002">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ilustration_cloud"
+        android:layout_marginTop="12dp"/>
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00"
+        android:textSize="45sp"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"/>
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jum, Okt 8"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/tvTime"/>
+
+    <ImageView
+        android:id="@+id/imgSleep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_sleep_black"
+        app:tint="@color/white"
+        android:layout_below="@id/tvDate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <RelativeLayout
+        android:id="@+id/sectInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgSleep"
+        android:layout_centerHorizontal="true"
+        android:paddingStart="33dp"
+        android:paddingEnd="33dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginBottom="17dp"
+        android:elevation="4dp">
+
+        <ImageView
+            android:id="@+id/icSleep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_clock"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/tvText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/icSleep"
+            android:layout_alignTop="@id/icSleep"
+            android:layout_alignBottom="@id/icSleep"
+            android:text="Waktu Tidur"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/tvJam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_alignParentEnd="true"/>
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/black"
+            android:layout_below="@id/tvText1"
+            android:layout_marginTop="9dp"/>
+
+        <ImageView
+            android:id="@+id/icAlarm"
+            android:layout_width="28dp"
+            android:layout_height="29dp"
+            android:src="@drawable/ic_music"
+            android:layout_below="@id/line"
+            android:layout_marginTop="30dp"/>
+
+        <TextView
+            android:id="@+id/tvText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Suara Tidur"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_toEndOf="@id/icAlarm"
+            android:layout_alignBottom="@id/icAlarm"
+            android:layout_alignTop="@id/icAlarm"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/tvSuara"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gerimis"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_below="@id/line"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="30dp"/>
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:text="Batalkan"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:background="@drawable/bg_card_10"
+        android:backgroundTint="#2C3D69"
+        android:paddingStart="58dp"
+        android:paddingEnd="58dp"
+        android:layout_marginBottom="72dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

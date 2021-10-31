@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.SetAlarmFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ilustrasi_clock"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="38dp"/>
+
+        <TimePicker
+            android:id="@+id/tpTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:timePickerMode="spinner"
+            android:layout_below="@id/imgClock"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="37dp"/>
+
+        <RelativeLayout
+            android:id="@+id/sectInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tpTime"
+            android:layout_centerHorizontal="true"
+            android:paddingStart="33dp"
+            android:paddingEnd="33dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+
+            android:layout_marginTop="64dp"
+            android:layout_marginBottom="17dp"
+            android:elevation="4dp">
+
+            <TextView
+                android:id="@+id/tvText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alarm"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_marginStart="10dp"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swAlarm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:thumbTint="@color/green_001"
+                android:layout_alignParentEnd="true"/>
+
+            <TextView
+                android:id="@+id/tvText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nada Dering"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/tvText1"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"/>
+
+            <ImageView
+                android:id="@+id/tvAlarm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/swAlarm"
+                android:layout_alignTop="@id/tvText2"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_play" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1027393260989",
+    "project_id": "medheal-70cdb",
+    "storage_bucket": "medheal-70cdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1027393260989:android:2196270924f12c6a9a16d4",
+        "android_client_info": {
+          "package_name": "com.one.medheal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1027393260989-qq0d3g869mtd4ge2h69efgm8t4iqt7i0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBT8KUuoCtJgNWvWq_dA3imlyK1IGTpHBE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1027393260989-qq0d3g869mtd4ge2h69efgm8t4iqt7i0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

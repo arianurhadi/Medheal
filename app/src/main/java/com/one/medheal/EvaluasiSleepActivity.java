@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class OpeningActivity extends AppCompatActivity {
+public class EvaluasiSleepActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_opening);
+        setContentView(R.layout.activity_evaluasi_sleep);
     }
 }

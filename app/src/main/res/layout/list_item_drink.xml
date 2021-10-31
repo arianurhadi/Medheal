@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:gravity="center_horizontal"
-    android:layout_gravity="center_horizontal">
+    android:gravity="center_horizontal">
 
     <ImageView
-        android:id="@+id/imgObat"
-        android:layout_width="125dp"
-        android:layout_height="113dp"/>
+        android:id="@+id/btnDrink"
+        android:layout_width="37dp"
+        android:layout_height="54dp"
+        android:src="@drawable/ic_drink"
+        app:tint="@color/grey_001" />
 
     <TextView
-        android:id="@+id/tvObat"
+        android:id="@+id/tvMl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nama Obat"
-        android:layout_marginTop="11dp"/>
+        android:text="200 ml"/>
 
 </LinearLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/imgBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ilustrasi_body"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <View
+        android:id="@+id/btnKepala"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toTopOf="@id/imgBody"
+        app:layout_constraintLeft_toLeftOf="@id/imgBody"
+        app:layout_constraintRight_toRightOf="@id/imgBody"/>
+
+    <View
+        android:id="@+id/btnLeher"
+        android:layout_width="50dp"
+        android:layout_height="10dp"
+        app:layout_constraintTop_toBottomOf="@id/btnKepala"
+        app:layout_constraintLeft_toLeftOf="@id/imgBody"
+        app:layout_constraintRight_toRightOf="@id/imgBody"/>
+
+    <View
+        android:id="@+id/btnTanganKanan"
+        android:layout_width="30dp"
+        android:layout_height="150dp"
+        app:layout_constraintTop_toBottomOf="@id/btnKepala"
+        app:layout_constraintRight_toRightOf="@id/imgBody"/>
+
+    <View
+        android:id="@+id/btnTanganKiri"
+        android:layout_width="30dp"
+        android:layout_height="150dp"
+        app:layout_constraintTop_toBottomOf="@id/btnKepala"
+        app:layout_constraintLeft_toLeftOf="@id/imgBody"/>
+
+    <View
+        android:id="@+id/btnDada"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/btnLeher"
+        app:layout_constraintLeft_toLeftOf="@id/btnLeher"/>
+
+    <View
+        android:id="@+id/btnPerut"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/btnDada"
+        app:layout_constraintLeft_toLeftOf="@id/btnLeher"/>
+
+    <View
+        android:id="@+id/btnPinggang"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        app:layout_constraintTop_toBottomOf="@id/btnPerut"
+        app:layout_constraintLeft_toLeftOf="@id/btnLeher"/>
+
+    <View
+        android:id="@+id/btnVital"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        app:layout_constraintTop_toBottomOf="@id/btnPinggang"
+        app:layout_constraintLeft_toLeftOf="@id/btnLeher"/>
+
+    <View
+        android:id="@+id/btnKakiKanan"
+        android:layout_width="30dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="-20dp"
+        app:layout_constraintTop_toBottomOf="@id/btnVital"
+        app:layout_constraintRight_toRightOf="@id/btnVital"/>
+
+    <View
+        android:id="@+id/btnKakiKiri"
+        android:layout_width="30dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="-20dp"
+        app:layout_constraintTop_toBottomOf="@id/btnVital"
+        app:layout_constraintLeft_toLeftOf="@id/btnVital"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

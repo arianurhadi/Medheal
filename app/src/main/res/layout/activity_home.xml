@@ -9,49 +9,10 @@
     android:background="@color/white"
     android:fitsSystemWindows="true">
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navView"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginTop="25dp"
-        app:menu="@menu/sidebar_menu"
-        app:itemTextColor="@color/blue_002"
-        android:background="@drawable/bg_sidebar"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/sidebar_header">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:layout_alignParentLeft="true"
-                android:layout_marginTop="223dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ilustrasi_awan"/>
-
-            <ImageView
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="310dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ilustrasi_awan"/>
-
-            <ImageView
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ilustrasi_sepeda"/>
-
-        </RelativeLayout>
-
-    </com.google.android.material.navigation.NavigationView>
-
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
         <ScrollView
             android:layout_width="wrap_content"
@@ -489,5 +450,45 @@
             app:menu="@menu/bottom_nav_menu" />
 
     </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="25dp"
+        app:menu="@menu/sidebar_menu"
+        app:itemTextColor="@color/blue_002"
+        android:background="@drawable/bg_sidebar"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/sidebar_header">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="223dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ilustrasi_awan"/>
+
+            <ImageView
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="310dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ilustrasi_awan"/>
+
+            <ImageView
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ilustrasi_sepeda"/>
+
+        </RelativeLayout>
+
+    </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>

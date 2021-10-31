@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DrinkActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/sectTitle"
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/bg_bottom_nav"
+                android:backgroundTint="@color/green_002">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Drink Tracker"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/sectTgl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/sectTitle"
+                android:layout_marginTop="26dp"
+                android:layout_marginStart="28dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_date"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="06 Oktober 2021"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_edit"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/sectTitle"
+                android:layout_marginEnd="28dp"
+                android:layout_marginTop="26dp"/>
+
+            <RelativeLayout
+                android:id="@+id/sectProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sectTgl"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="22dp">
+
+                <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                    android:id="@+id/progressDrink"
+                    android:layout_width="179dp"
+                    android:layout_height="179dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="58dp"
+                    app:cpb_background_progressbar_color="#B8C7C8"
+                    app:cpb_background_progressbar_width="15dp"
+                    app:cpb_progress="0"
+                    app:cpb_progressbar_color="@color/blue_001"
+                    app:cpb_progressbar_width="17dp"
+                    app:cpb_round_border="true"
+                    android:elevation="4dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/tvWaktu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/blue_002"
+                        android:textSize="24sp"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_drink"
+                        app:tint="@color/blue_002"
+                        android:layout_marginStart="6dp"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBtnDrink"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sectProgress"
+                tools:listitem="@layout/list_item_drink" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <include
+        android:id="@+id/bottomSubmenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/bottom_track_submenu"
+        android:layout_above="@id/bottomNavBar"
+        android:layout_alignEnd="@id/bottomNavBar"
+        android:layout_marginEnd="32dp"
+        android:visibility="gone"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavBar"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/bg_bottom_nav"
+        android:elevation="4dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        app:backgroundTint="#27AE60"
+        app:itemIconTint="@color/white"
+        app:itemRippleColor="@color/blue_002"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/bottom_nav_menu" />
+
+</RelativeLayout>

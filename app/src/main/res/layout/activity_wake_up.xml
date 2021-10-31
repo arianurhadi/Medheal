@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WakeUpActivity"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/imgSun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ilustrasi_sun"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"/>
+
+    <TextView
+        android:id="@+id/tvText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selamat Pagi"
+        android:textSize="24sp"
+        android:textColor="@color/blue_002"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/imgSun"
+        android:layout_marginTop="75dp"/>
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:textColor="@color/blue_002"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tvText"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jum, Okt 8"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/blue_002"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/tvTime"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:text="Evaluasi Tidur"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:textColor="@color/blue_002"
+        android:background="@drawable/bg_card_10"
+        android:backgroundTint="@color/white"
+        android:paddingStart="58dp"
+        android:paddingEnd="58dp"
+        android:layout_marginBottom="72dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

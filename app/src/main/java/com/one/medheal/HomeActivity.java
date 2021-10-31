@@ -46,9 +46,24 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         navView.setNavigationItemSelectedListener(item -> {
-            item.setChecked(true);
-            drawerLayout.closeDrawer(drawerLayout);
-            return true;
+
+            switch (item.getItemId()){
+                case R.id.news:
+                    Intent intent = new Intent(HomeActivity.this, NewsActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.setting:
+                    Intent intent1 = new Intent(HomeActivity.this, SettingActivity.class);
+                    startActivity(intent1);
+                    break;
+                case R.id.signOut:
+                    Intent intent2 = new Intent(HomeActivity.this, SplashActivity.class);
+                    startActivity(intent2);
+                    finish();
+                    break;
+            }
+            drawerLayout.closeDrawer(START);
+            return false;
         });
 
         bottomNavigationView.setOnItemSelectedListener(item -> {

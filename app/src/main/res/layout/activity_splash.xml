@@ -5,18 +5,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ECF0F1"
-    tools:context=".Onboarding">
+    android:background="@color/white"
+    tools:context=".SplashActivity">
 
     <ImageView
+        android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="70dp"
-        android:background="@drawable/logomedheal"
-        android:id="@+id/logo"/>
+        android:background="@drawable/logomedheal"/>
 
     <TextView
+        android:id="@+id/versi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Versi 1.1.0"
@@ -24,7 +25,6 @@
         android:textSize="14dp"
         android:layout_below="@id/logo"
         android:textAlignment="center"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/versi"/>
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>
