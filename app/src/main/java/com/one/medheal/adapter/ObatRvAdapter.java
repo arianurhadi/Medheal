@@ -13,7 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.one.medheal.DetailDrugActivity;
 import com.one.medheal.R;
-import com.one.medheal.model.Obat;
+import com.one.medheal.database.Obat;
+import com.one.medheal.model.ObatModel;
 
 import java.util.ArrayList;
 

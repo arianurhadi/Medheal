@@ -10,8 +10,6 @@ import android.os.Looper;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private static final String PREFS_NAME = "mySharedPref";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,20 +17,15 @@ public class SplashActivity extends AppCompatActivity {
 
         Handler handler = new Handler();
 
-        SharedPreferences sharedPreferences = SplashActivity.this.getSharedPreferences(PREFS_NAME,0);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        boolean firstRun = sharedPreferences.getBoolean("firstRun", true);
-
-        if (firstRun){
-            editor.putBoolean("firstRun", false);
-            editor.apply();
-            handler.postDelayed((Runnable) () -> {
+        if (Preferences.getStatusFirstRun(SplashActivity.this)){
+            Preferences.setFirstRun(SplashActivity.this, false);
+            handler.postDelayed(() -> {
                 Intent intent = new Intent(SplashActivity.this, OnBoardingActivity.class);
                 startActivity(intent);
                 finish();
             }, 1000);
         } else {
-            handler.postDelayed((Runnable) () -> {
+            handler.postDelayed(() -> {
                 Intent intent = new Intent(SplashActivity.this, HomeActivity.class);
                 startActivity(intent);
                 finish();

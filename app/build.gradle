@@ -46,6 +46,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-auth'
 
-    //mpandroidchart
-    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    //room database
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
 }

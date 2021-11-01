@@ -9,32 +9,24 @@ import android.widget.LinearLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class DrinkActivity extends AppCompatActivity {
-
-    boolean visible = true;
+public class SearchActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
     private LinearLayout bottomSubMenu;
     private LinearLayout btnSymptom;
-    private LinearLayout btnDrink;
-    private LinearLayout btnSleep;
+
+    boolean visible = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_drink);
+        setContentView(R.layout.activity_menu_search);
 
         bottomNavigationView = findViewById(R.id.bottomNavBar);
         bottomSubMenu = findViewById(R.id.bottomSubmenu);
         btnSymptom = findViewById(R.id.btnSymptom);
-        btnDrink = findViewById(R.id.btnDrink);
-        btnSleep = findViewById(R.id.btnSleep);
 
-        bottomNavigationView.setSelectedItemId(R.id.track);
-
-        bottomNavigationView.getMenu().getItem(4)
-                .setIcon(R.drawable.ic_drink)
-                .setTitle("Drink");
+        bottomNavigationView.setSelectedItemId(R.id.search);
 
         bottomNav();
 
@@ -45,17 +37,17 @@ public class DrinkActivity extends AppCompatActivity {
 
             switch(item.getItemId()){
                 case R.id.home:
-                    Intent intentHome = new Intent(DrinkActivity.this, HomeActivity.class);
+                    Intent intentHome = new Intent(SearchActivity.this, HomeActivity.class);
                     intentHome.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intentHome);
                     break;
                 case R.id.search:
-                    Intent intentSearch = new Intent(DrinkActivity.this, SearchActivity.class);
+                    Intent intentSearch = new Intent(SearchActivity.this, SearchActivity.class);
                     intentSearch.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intentSearch);
                     break;
                 case R.id.drug:
-                    Intent intentDrug = new Intent(DrinkActivity.this, DrugActivity.class);
+                    Intent intentDrug = new Intent(SearchActivity.this, DrugActivity.class);
                     intentDrug.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intentDrug);
                     break;
@@ -74,23 +66,10 @@ public class DrinkActivity extends AppCompatActivity {
         });
 
         btnSymptom.setOnClickListener(view -> {
-            Intent intent = new Intent(DrinkActivity.this, SymptomActivity.class);
+            Intent intent = new Intent(SearchActivity.this, SymptomActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(intent);
         });
-
-        btnDrink.setOnClickListener(view -> {
-            Intent intent = new Intent(DrinkActivity.this, DrinkActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-            startActivity(intent);
-        });
-
-        btnSleep.setOnClickListener(view -> {
-            Intent intent = new Intent(DrinkActivity.this, SleepActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-            startActivity(intent);
-        });
-
     }
 
 }

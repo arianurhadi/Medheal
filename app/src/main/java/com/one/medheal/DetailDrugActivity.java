@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.one.medheal.model.Obat;
+import com.one.medheal.database.Database;
+import com.one.medheal.database.Obat;
+import com.one.medheal.database.ObatDao;
 
 public class DetailDrugActivity extends AppCompatActivity {
     TextView namaObat;
@@ -15,7 +17,8 @@ public class DetailDrugActivity extends AppCompatActivity {
     TextView kontra;
     TextView efek;
     ImageView gambarObat;
-    ImageView imgFav;
+    ImageView btnFav;
+    private Database db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,7 @@ public class DetailDrugActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_drug);
 
         Obat obat = (Obat) getIntent().getSerializableExtra("obat");
+//        int position = getIntent().getIntExtra("position", 0);
 
         namaObat = findViewById(R.id.tvObat);
         hargaObat = findViewById(R.id.tvHarga);
@@ -30,20 +34,37 @@ public class DetailDrugActivity extends AppCompatActivity {
         kontra = findViewById(R.id.tvKontra);
         efek = findViewById(R.id.tvEfek);
         gambarObat = findViewById(R.id.imgObat);
-        imgFav = findViewById(R.id.imgLove);
+        btnFav = findViewById(R.id.btnFav);
+
+        db = Database.getInstance(this);
 
         namaObat.setText(obat.getNamaObat());
-        hargaObat.setText(obat.getHarga());
-        indikasi.setText(obat.getIndikasi());
-        kontra.setText(obat.getKontra());
-        efek.setText(obat.getEfek());
+        hargaObat.setText(obat.getHargaObat());
+        indikasi.setText(obat.getIndikasiObat());
+        kontra.setText(obat.getKontraObat());
+        efek.setText(obat.getEfekObat());
         gambarObat.setImageResource(obat.getGambarObat());
 
-//        if (obat.getFav()){
-//            imgFav.setImageResource(R.drawable.ic_love);
-//        }else{
-//            imgFav.setImageResource(R.drawable.ic_love_outline);
-//        }
+        String idObat = obat.getIdObat();
+        boolean obatFav = obat.getFavObat();
+
+        if (obatFav){
+            btnFav.setImageResource(R.drawable.ic_love);
+        }else{
+            btnFav.setImageResource(R.drawable.ic_love_outline);
+        }
+
+        ObatDao obatDao = db.obatDao();
+
+        btnFav.setOnClickListener(view -> {
+            if (!obatFav){
+                btnFav.setImageResource(R.drawable.ic_love);
+                obatDao.updateFavObat(true, idObat);
+            } else {
+                btnFav.setImageResource(R.drawable.ic_love_outline);
+                obatDao.updateFavObat(false, idObat);
+            }
+        });
 
     }
 }

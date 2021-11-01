@@ -46,16 +46,25 @@
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageView
-                    android:id="@+id/imgProfile"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/profile"
                     android:layout_width="61dp"
                     android:layout_height="61dp"
                     android:layout_marginTop="40dp"
                     android:layout_marginEnd="42dp"
+                    app:cardCornerRadius="50dp"
                     android:background="@drawable/bg_profile_rounded"
                     android:elevation="4dp"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imgProfile"
+                        android:layout_width="match_parent"
+                        android:src="@mipmap/ic_launcher_medheal"
+                        android:layout_height="match_parent"/>
+
+                </androidx.cardview.widget.CardView>
 
                 <LinearLayout
                     android:id="@+id/sectTitle"
@@ -66,14 +75,14 @@
                     android:layout_marginEnd="28dp"
                     android:orientation="vertical"
                     app:layout_constraintLeft_toRightOf="@id/btnSidebar"
-                    app:layout_constraintRight_toLeftOf="@id/imgProfile"
+                    app:layout_constraintRight_toLeftOf="@id/profile"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
                         android:id="@+id/namaPengguna"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Halo, Ibu Sri"
+                        android:text="Halo..."
                         android:textColor="@color/blue_002"
                         android:textSize="22sp"
                         android:textStyle="bold" />
@@ -121,7 +130,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="3dp"
-                        android:text="06 Oktober 2021"
+                        android:text="Day Month Year"
                         android:textColor="@color/blue_002"
                         android:textSize="12sp"
                         android:textStyle="bold" />
@@ -275,7 +284,7 @@
                     android:layout_marginTop="17dp"
                     app:cpb_background_progressbar_color="#B8C7C8"
                     app:cpb_background_progressbar_width="10dp"
-                    app:cpb_progress="80"
+                    app:cpb_progress="0"
                     app:cpb_progressbar_color="#E74C3C"
                     app:cpb_progressbar_width="12dp"
                     app:cpb_round_border="true"
@@ -287,7 +296,7 @@
                     android:id="@+id/indicatorSleep"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="6j 34m"
+                    android:text="0j 0m"
                     android:textColor="@color/blue_002"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="@id/progressSleep"
@@ -316,7 +325,7 @@
                     android:layout_marginEnd="58dp"
                     app:cpb_background_progressbar_color="#B8C7C8"
                     app:cpb_background_progressbar_width="10dp"
-                    app:cpb_progress="80"
+                    app:cpb_progress="0"
                     app:cpb_progressbar_color="#3498DB"
                     app:cpb_progressbar_width="12dp"
                     app:cpb_round_border="true"
@@ -340,7 +349,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="3dp"
-                        android:text="3"
+                        android:text="0"
                         android:textColor="@color/blue_002"
                         android:textSize="18sp"
                         app:layout_constraintBottom_toBottomOf="@id/progressDrink"
@@ -379,7 +388,7 @@
                     android:layout_marginTop="25dp"
                     app:cpb_background_progressbar_color="#B8C7C8"
                     app:cpb_background_progressbar_width="10dp"
-                    app:cpb_progress="80"
+                    app:cpb_progress="0"
                     app:cpb_progressbar_color="#2ECC71"
                     app:cpb_progressbar_width="12dp"
                     app:cpb_round_border="true"
@@ -391,7 +400,7 @@
                     android:id="@+id/indicatorFisik"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="90 %"
+                    android:text="0 %"
                     android:textColor="@color/blue_002"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="@id/progressFisik"
@@ -458,6 +467,7 @@
         android:layout_marginTop="25dp"
         app:menu="@menu/sidebar_menu"
         app:itemTextColor="@color/blue_002"
+        android:fitsSystemWindows="true"
         android:background="@drawable/bg_sidebar"
         android:layout_gravity="start"
         app:headerLayout="@layout/sidebar_header">
@@ -467,11 +477,11 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="223dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ilustrasi_awan"/>
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="370dp"
+                android:src="@drawable/ilustrasi_awan" />
 
             <ImageView
                 android:layout_alignParentEnd="true"

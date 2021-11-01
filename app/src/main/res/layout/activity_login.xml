@@ -45,7 +45,7 @@
         android:background="@drawable/bg_login"
         android:hint="Email / No Handphone"
         android:paddingStart="22dp"
-        android:paddingEnd="22dp"/>
+        android:paddingEnd="22dp" />
 
     <EditText
         android:id="@+id/inputPassword"

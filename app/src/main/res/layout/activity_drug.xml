@@ -173,13 +173,22 @@
                 android:id="@+id/tvDaftarObat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Daftar Obatku"
-                android:textSize="18sp"
-                android:textColor="@color/blue_002"
-                android:layout_toEndOf="@id/imgLove"
                 android:layout_alignTop="@id/imgLove"
                 android:layout_alignBottom="@id/imgLove"
-                android:layout_marginStart="14dp"/>
+                android:layout_marginStart="14dp"
+                android:layout_toEndOf="@id/imgLove"
+                android:text="Daftar Obatku"
+                android:textColor="@color/blue_002"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvJmlFav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(0 Obat)"
+                android:layout_toEndOf="@id/tvDaftarObat"
+                android:layout_alignBaseline="@id/tvDaftarObat"
+                android:layout_marginStart="20dp"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvObatku"
@@ -189,16 +198,27 @@
                 android:layout_marginTop="14dp"/>
 
             <TextView
+                android:id="@+id/tvBelumAda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:text="Belum ada favorite"
+                android:textSize="16sp"
+                android:textAlignment="center"
+                android:layout_below="@id/tvDaftarObat"
+                android:visibility="gone"/>
+
+            <TextView
                 android:id="@+id/tvJmlObat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="800 Obat"
-                android:textSize="14sp"
-                android:textColor="@color/blue_002"
                 android:layout_below="@id/rvObatku"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginStart="24dp"/>
+                android:padding="5dp"
+                android:text="0 Obat"
+                android:textColor="@color/blue_002"
+                android:textSize="14sp" />
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
@@ -228,9 +248,14 @@
                 android:id="@+id/rvObat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_below="@id/tvJmlObat"
-                android:layout_marginTop="14dp"/>
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="14dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_below="@id/rvObat"/>
 
         </RelativeLayout>
 

@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -43,7 +45,9 @@ public class RegisterActivity extends AppCompatActivity {
             auth.createUserWithEmailAndPassword(email, pass)
                     .addOnCompleteListener(this, task -> {
                         if (task.isSuccessful()){
-                            Toast.makeText(this, "Berhasil", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this, "Register Berhasil", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                            finish();
                         }
                     });
         });
@@ -57,15 +61,15 @@ public class RegisterActivity extends AppCompatActivity {
             validate = false;
         }
         if (TextUtils.isEmpty(inputPass.getText().toString())){
-            inputEmail.setError("Password harus di isi");
+            inputPass.setError("Password harus di isi");
             validate = false;
         }
         if (TextUtils.isEmpty(inputConPass.getText().toString())){
-            inputEmail.setError("Konfirmasi password harus di isi");
+            inputConPass.setError("Konfirmasi password harus di isi");
             validate = false;
         }
         if (!inputConPass.getText().toString().equals(inputPass.getText().toString())){
-            inputEmail.setError("Password tidak sama");
+            inputConPass.setError("Password tidak sama");
             validate = false;
         }
         return validate;

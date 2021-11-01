@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="150dp"
+    android:layout_height="180dp"
     android:orientation="vertical"
     android:gravity="center_horizontal"
+    android:layout_marginTop="20dp"
     android:layout_gravity="center_horizontal">
 
     <ImageView
@@ -13,9 +14,10 @@
 
     <TextView
         android:id="@+id/tvObat"
-        android:layout_width="wrap_content"
+        android:layout_width="125dp"
         android:layout_height="wrap_content"
         android:text="Nama Obat"
+        android:textAlignment="center"
         android:layout_marginTop="11dp"/>
 
 </LinearLayout>

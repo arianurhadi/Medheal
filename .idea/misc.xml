@@ -21,22 +21,23 @@
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/drawable/ic_alarm.xml" value="0.18518518518518517" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_add_symptom.xml" value="0.22" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_daftar.xml" value="0.16032608695652173" />
-        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_detail_drug.xml" value="0.25" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_detail_drug.xml" value="0.2" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_drink.xml" value="0.16" />
-        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_drug.xml" value="0.2" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_drug.xml" value="0.25" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_drug_cat.xml" value="0.16" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_edit_symptom.xml" value="0.2" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_evaluasi_sleep.xml" value="0.2" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_forgotpassword.xml" value="0.16032608695652173" />
-        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_home.xml" value="0.25" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_login.xml" value="0.18" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_menu_search.xml" value="0.25" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_news.xml" value="0.22" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_news_detail.xml" value="0.22" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_on_boarding.xml" value="0.33" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_onboarding.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_opening.xml" value="0.16032608695652173" />
-        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_register.xml" value="0.2" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_set_sound.xml" value="0.15489130434782608" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_setting.xml" value="0.22" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_setting_sleep.xml" value="0.16" />
@@ -65,6 +66,7 @@
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/menu/sidebar_header.xml" value="0.153125" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/menu/sidebar_menu.xml" value="0.153125" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/menu/track_submenu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1824074074074074" />
       </map>
     </option>
   </component>

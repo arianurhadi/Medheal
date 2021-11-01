@@ -3,6 +3,9 @@
 
     <group android:checkableBehavior="single">
 
+        <item android:id="@+id/login"
+            android:title="Login / Daftar"/>
+
         <item android:id="@+id/news"
             android:title="News" />
 

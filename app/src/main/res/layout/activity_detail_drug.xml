@@ -40,13 +40,14 @@
         </RelativeLayout>
 
         <ImageView
+            android:id="@+id/btnFav"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_love_outline"
             android:layout_below="@id/sectTitle"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="29dp"
-            android:layout_marginEnd="32dp"/>
+            android:layout_marginEnd="32dp"
+            android:src="@drawable/ic_love_outline" />
 
         <ImageView
             android:id="@+id/imgObat"
@@ -59,10 +60,11 @@
 
         <TextView
             android:id="@+id/tvObat"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:text="Nama Obat"
             android:textSize="24dp"
+            android:textAlignment="center"
             android:textStyle="bold"
             android:textColor="@color/blue_002"
             android:layout_marginTop="11dp"
@@ -71,10 +73,11 @@
 
         <TextView
             android:id="@+id/tvHarga"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Harga"
-            android:textSize="18dp"
+            android:textSize="18sp"
+            android:textAlignment="center"
             android:textColor="@color/blue_002"
             android:layout_marginTop="7dp"
             android:layout_below="@id/tvObat"
@@ -85,7 +88,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Harga"
-            android:textSize="12dp"
+            android:textSize="12sp"
             android:textColor="@color/blue_002"
             android:layout_marginTop="5dp"
             android:layout_below="@id/tvHarga"
@@ -98,13 +101,14 @@
             android:orientation="vertical"
             android:layout_below="@id/tvPerBox"
             android:layout_marginTop="32dp"
-            android:layout_marginStart="38dp">
+            android:layout_marginStart="38dp"
+            android:layout_marginEnd="38dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Indikasi Umum"
-                android:textSize="24dp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 android:textColor="@color/blue_002"
                 android:layout_marginTop="11dp"/>
@@ -127,13 +131,14 @@
             android:orientation="vertical"
             android:layout_below="@id/sectIndikasi"
             android:layout_marginTop="32dp"
-            android:layout_marginStart="38dp">
+            android:layout_marginStart="38dp"
+            android:layout_marginEnd="38dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Kontra Indikasi"
-                android:textSize="24dp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 android:textColor="@color/blue_002"
                 android:layout_marginTop="11dp"/>
@@ -143,7 +148,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/lorem_ipsum"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textColor="@color/blue_002"
                 android:layout_marginTop="7dp" />
 
@@ -156,13 +161,14 @@
             android:orientation="vertical"
             android:layout_below="@id/sectKontra"
             android:layout_marginTop="32dp"
-            android:layout_marginStart="38dp">
+            android:layout_marginStart="38dp"
+            android:layout_marginEnd="38dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Efek Samping"
-                android:textSize="24dp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 android:textColor="@color/blue_002"
                 android:layout_marginTop="11dp"/>
@@ -172,7 +178,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/lorem_ipsum"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textColor="@color/blue_002"
                 android:layout_marginTop="7dp"
                 android:layout_marginBottom="50dp"/>

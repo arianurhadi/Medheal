@@ -2,16 +2,22 @@ package com.one.medheal;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.one.medheal.adapter.ObatRvAdapter;
-import com.one.medheal.model.Obat;
+import com.one.medheal.database.Database;
+import com.one.medheal.database.Obat;
+import com.one.medheal.database.ObatDao;
+import com.one.medheal.model.ObatModel;
 
 import java.util.ArrayList;
 
@@ -19,44 +25,112 @@ public class DrugActivity extends AppCompatActivity {
 
     boolean visible = true;
 
+    private BottomNavigationView bottomNavigationView;
+    private LinearLayout bottomSubMenu;
+    private LinearLayout btnSymptom;
+    private LinearLayout btnDrink;
+    private LinearLayout btnSleep;
+
     private RecyclerView rvObat;
     private RecyclerView rvObatFav;
     private ArrayList<Obat> listObat;
+    private ArrayList<Obat> listFavObat;
     private ObatRvAdapter obatAdapter;
+    private ObatRvAdapter favObatAdapter;
+    private Database db;
+
+    private TextView tvJmlObat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drug);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavBar);
-        LinearLayout bottomSubMenu = findViewById(R.id.bottomSubmenu);
-        LinearLayout btnSymptom = findViewById(R.id.btnSymptom);
+        bottomNavigationView = findViewById(R.id.bottomNavBar);
+        bottomSubMenu = findViewById(R.id.bottomSubmenu);
+        btnSymptom = findViewById(R.id.btnSymptom);
+        btnDrink = findViewById(R.id.btnDrink);
+        btnSleep = findViewById(R.id.btnSleep);
+
+        TextView tvBelumAdaFav = findViewById(R.id.tvBelumAda);
+        tvJmlObat = findViewById(R.id.tvJmlObat);
+        db = Database.getInstance(this);
 
         rvObat = findViewById(R.id.rvObat);
         rvObatFav = findViewById(R.id.rvObatku);
         listObat = new ArrayList<Obat>();
+        listFavObat = new ArrayList<Obat>();
 
-        init();
+//        init();
+        listObat = (ArrayList<Obat>) db.obatDao().getAllObat();
+        filterFavObat();
 
         bottomNavigationView.setSelectedItemId(R.id.drug);
 
+        tvJmlObat.setText(listObat.size() + " Obat");
+
+        bottomNav();
+
+        showObat();
+
+        if (listFavObat.isEmpty()){
+            rvObatFav.setVisibility(View.GONE);
+            tvBelumAdaFav.setVisibility(View.VISIBLE);
+        }else {
+            tvBelumAdaFav.setVisibility(View.GONE);
+            rvObatFav.setVisibility(View.VISIBLE);
+            showFavorite();
+        }
+
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private void showObat(){
+        obatAdapter = new ObatRvAdapter(listObat, this, false);
+        rvObat.setLayoutManager(new GridLayoutManager(this, 2));
+        rvObat.setAdapter(obatAdapter);
+        obatAdapter.notifyDataSetChanged();
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private void showFavorite(){
+        favObatAdapter = new ObatRvAdapter(listFavObat, this, true);
+        rvObatFav.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
+        rvObatFav.setAdapter(favObatAdapter);
+        favObatAdapter.notifyDataSetChanged();
+    }
+
+    private void filterFavObat(){
+        for (Obat data : listObat) {
+            if (data.getFavObat()){
+                listFavObat.add(data);
+            }
+        }
+    }
+
+    private void bottomNav(){
         bottomNavigationView.setOnItemSelectedListener(item -> {
 
             switch(item.getItemId()){
                 case R.id.home:
-                    Intent intent = new Intent(DrugActivity.this, HomeActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                    startActivity(intent);
+                    Intent intentHome = new Intent(DrugActivity.this, HomeActivity.class);
+                    intentHome.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intentHome);
+                    break;
+                case R.id.search:
+                    Intent intentSearch = new Intent(DrugActivity.this, SearchActivity.class);
+                    intentSearch.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intentSearch);
                     break;
                 case R.id.drug:
-                    Intent intent2 = new Intent(DrugActivity.this, DrugActivity.class);
-                    intent2.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                    startActivity(intent2);
+                    Intent intentDrug = new Intent(DrugActivity.this, DrugActivity.class);
+                    intentDrug.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intentDrug);
                     break;
                 case R.id.track:
                     if (visible){
                         bottomSubMenu.setVisibility(View.VISIBLE);
+                        bottomSubMenu.animate().translationY(20);
                         visible = false;
                     } else {
                         bottomSubMenu.setVisibility(View.GONE);
@@ -64,7 +138,6 @@ public class DrugActivity extends AppCompatActivity {
                     }
                     break;
             }
-
             return false;
         });
 
@@ -74,25 +147,17 @@ public class DrugActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        showObat();
-    }
+        btnDrink.setOnClickListener(view -> {
+            Intent intent = new Intent(DrugActivity.this, DrinkActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            startActivity(intent);
+        });
 
-    private void showObat(){
-        obatAdapter = new ObatRvAdapter(listObat, this, false);
-        rvObat.setLayoutManager(new GridLayoutManager(this, 2));
-        rvObat.setAdapter(obatAdapter);
+        btnSleep.setOnClickListener(view -> {
+            Intent intent = new Intent(DrugActivity.this, SleepActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            startActivity(intent);
+        });
     }
-
-    private void init(){
-        listObat.add(new Obat("Paracetamol", "20.000", "gatau", "gatau",
-                "gatau", false, R.drawable.animasi));
-        listObat.add(new Obat("Paracetamol", "20.000", "gatau", "gatau",
-                "gatau", false, R.drawable.animasi));
-        listObat.add(new Obat("Paracetamol", "20.000", "gatau", "gatau",
-                "gatau", false, R.drawable.animasi));
-        listObat.add(new Obat("Paracetamol", "20.000", "gatau", "gatau",
-                "gatau", false, R.drawable.animasi));
-    }
-
 
 }

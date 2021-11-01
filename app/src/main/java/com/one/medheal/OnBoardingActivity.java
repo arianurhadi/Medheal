@@ -13,7 +13,7 @@ public class OnBoardingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_on_boarding);
 
-        AppCompatButton btnLanjut = (AppCompatButton) findViewById(R.id.btnLanjut);
+        AppCompatButton btnLanjut = findViewById(R.id.btnLanjut);
 
         btnLanjut.setOnClickListener(view -> {
             Intent intent = new Intent(OnBoardingActivity.this, LoginActivity.class);

@@ -43,6 +43,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="34dp"
         android:background="@drawable/bg_login"
+        android:inputType="textEmailAddress"
         android:hint="Email / No Handphone"
         android:paddingStart="22dp" />
 
@@ -54,6 +55,7 @@
         android:layout_below="@+id/inputEmail"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="19dp"
+        android:inputType="textPassword"
         android:background="@drawable/bg_login"
         android:paddingStart="22dp"/>
 
@@ -62,6 +64,7 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:hint="Ketik Ulang Password"
+        android:inputType="textPassword"
         android:layout_below="@+id/inputPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="19dp"

@@ -1,49 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuSearch">
+    tools:context=".SearchActivity"
+    android:background="@color/white">
 
-    <LinearLayout
-        android:id="@+id/sectSearch"
-        android:layout_width="411dp"
-        android:layout_height="53dp"
-        android:layout_below="@id/menu_search"
-        android:background="@color/green_001"
-        android:gravity="center_vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.102"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
-        tools:ignore="MissingConstraints,NotSibling">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/menu_search"
-            android:layout_width="332dp"
-            android:layout_height="26dp"
-            android:background="@drawable/bg_profile_rounded"
-            android:paddingStart="19dp"
-            android:text="Aku Mau Cari Obat "
-            android:textSize="14sp"
-            tools:ignore="MissingConstraints,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/ic_search" />
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/sectSearch"
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                android:background="@color/green_001"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/searchView"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginEnd="10dp"
+                    android:paddingStart="19dp"
+                    android:paddingEnd="19dp"
+                    android:hint="Cari obat..."
+                    android:textSize="14sp"
+                    android:background="@drawable/bg_profile_rounded"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_search"
+                    android:layout_marginEnd="22dp"/>
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sectSearch"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvObat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rvHistory"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <include
+        android:id="@+id/bottomSubmenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/bottom_track_submenu"
+        android:layout_above="@id/bottomNavBar"
+        android:layout_alignEnd="@id/bottomNavBar"
+        android:layout_marginEnd="32dp"
+        android:visibility="gone"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavBar"
-        android:layout_width="371dp"
+        android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/bg_bottom_nav"
         android:elevation="4dp"
         android:paddingStart="20dp"
@@ -52,194 +84,7 @@
         app:itemIconTint="@color/white"
         app:itemRippleColor="@color/blue_002"
         app:itemTextColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.94"
         app:menu="@menu/bottom_nav_menu" />
 
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button4"
-        android:layout_width="110dp"
-        android:layout_height="32dp"
-        android:text="Antangin"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.946"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.22"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button5"
-        android:layout_width="110dp"
-        android:layout_height="32dp"
-        android:text="Bodrex"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button6"
-        android:layout_width="110dp"
-        android:layout_height="32dp"
-        android:text="Komix"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.946"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button3"
-        android:layout_width="110dp"
-        android:layout_height="32dp"
-        android:text="OBH combi"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button"
-        android:layout_width="110dp"
-        android:layout_height="32dp"
-        android:text="Konidin"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.22"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button2"
-        android:layout_width="110dp"
-        android:layout_height="32dp"
-        android:text="Paracetamol"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.22"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="125dp"
-        android:layout_height="141dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.408"
-        app:srcCompat="@drawable/konidin_6" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="125dp"
-        android:layout_height="141dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.849"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.408"
-        app:srcCompat="@drawable/bodrex_extra_2" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="90dp"
-        android:layout_height="18dp"
-        android:background="@color/white"
-        android:text="Bodrex Extra"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.813"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.51" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="85dp"
-        android:layout_height="16dp"
-        android:text="Paracetamol"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.199"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.746" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="56dp"
-        android:layout_height="16dp"
-        android:text="Konidin"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.202"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.511" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="58dp"
-        android:layout_height="19dp"
-        android:text="Antangin"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.781"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.745" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="125dp"
-        android:layout_height="141dp"
-        android:layout_marginTop="428dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/paracetamol_502" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="125dp"
-        android:layout_height="141dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.849"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.693"
-        app:srcCompat="@drawable/antangin_2" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
