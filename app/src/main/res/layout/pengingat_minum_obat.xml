@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="@dimen/cardview_compat_inset_shadow">
+
+    <RelativeLayout
+        android:id="@+id/sectDaftarObat"
+        android:layout_width="381dp"
+        android:layout_height="68dp"
+        android:background="@drawable/bg_bottom_nav"
+        android:backgroundTint="@color/green_002"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Pengingat minum obat"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Simpan"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.79" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavBar"
+        android:layout_width="371dp"
+        android:layout_height="58dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_bottom_nav"
+        android:elevation="4dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        app:backgroundTint="#27AE60"
+        app:itemIconTint="@color/white"
+        app:itemRippleColor="@color/blue_002"
+        app:itemTextColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.956"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <LinearLayout
+        android:layout_width="378dp"
+        android:layout_height="333dp"
+        android:layout_marginBottom="15dp"
+        android:elevation="@dimen/cardview_compat_inset_shadow"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.393"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.477"
+        tools:ignore="ExtraText">
+
+        <EditText
+            android:id="@+id/namaobat"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_below="@id/editNumHp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_edit_text"
+            android:hint="Nama Obat"
+            android:paddingStart="9dp"
+            android:textSize="14sp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/Setelwaktu"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_below="@id/editNumHp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_edit_text"
+            android:hint="Setel Waktu"
+            android:paddingStart="9dp"
+            android:textSize="14sp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/Frekuensi"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_below="@id/editNumHp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_edit_text"
+            android:hint="Frekuensi"
+            android:paddingStart="9dp"
+            android:textSize="14sp"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/Inventaris"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_below="@id/editNumHp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_edit_text"
+            android:hint="Inventaris"
+            android:paddingStart="9dp"
+            android:textSize="14sp"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/Durasi"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_below="@id/editNumHp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_edit_text"
+            android:hint="Durasi"
+            android:paddingStart="9dp"
+            android:textSize="14sp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/catatan"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_below="@id/editNumHp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_edit_text"
+            android:hint="Catatan"
+            android:paddingStart="9dp"
+            android:textSize="14sp"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Setel Pengingat"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.16" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
