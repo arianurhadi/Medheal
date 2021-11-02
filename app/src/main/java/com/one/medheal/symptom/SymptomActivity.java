@@ -1,9 +1,6 @@
-package com.one.medheal;
+package com.one.medheal.symptom;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,83 +9,53 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.one.medheal.adapter.PengingatAdapter;
-import com.one.medheal.database.Database;
-import com.one.medheal.database.PengingatObat;
-import com.one.medheal.database.PengingatObatDao;
+import com.one.medheal.DrinkActivity;
+import com.one.medheal.drug.DrugActivity;
+import com.one.medheal.HomeActivity;
+import com.one.medheal.drugreminder.PengingatObatActivity;
+import com.one.medheal.R;
+import com.one.medheal.SearchActivity;
+import com.one.medheal.sleep.SleepActivity;
 
-import java.util.ArrayList;
-import java.util.List;
+public class SymptomActivity extends AppCompatActivity {
 
-public class PengingatObatActivity extends AppCompatActivity {
+    boolean visible = true;
 
     private BottomNavigationView bottomNavigationView;
     private LinearLayout bottomSubMenu;
     private LinearLayout btnSymptom;
     private LinearLayout btnDrink;
     private LinearLayout btnSleep;
-    private LinearLayout sectAlert;
 
     private ImageView btnTambah;
-
-    private RecyclerView rcView;
-    private PengingatAdapter pengingatAdapter;
-    private Database db;
-
-    ArrayList<PengingatObat> listPengingat;
-    boolean visible = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_pengingat_minum_obat);
+        setContentView(R.layout.activity_symptom);
 
         bottomNavigationView = findViewById(R.id.bottomNavBar);
         bottomSubMenu = findViewById(R.id.bottomSubmenu);
         btnSymptom = findViewById(R.id.btnSymptom);
         btnDrink = findViewById(R.id.btnDrink);
         btnSleep = findViewById(R.id.btnSleep);
-        sectAlert = findViewById(R.id.sectAlert);
+
+        bottomNavigationView.setSelectedItemId(R.id.track);
+
+        bottomNavigationView.getMenu().getItem(4)
+                .setIcon(R.drawable.ic_symptom)
+                .setTitle("Symptom");
+
+
         btnTambah = findViewById(R.id.btnTambah);
 
-        db = Database.getInstance(this);
-        rcView = findViewById(R.id.rvReminderObat);
-
-        bottomNavigationView.setSelectedItemId(R.id.reminder);
-
-        listPengingat = new ArrayList<PengingatObat>();
-
-        bottomNav();
-        
-        getData();
-
-        if (listPengingat.isEmpty()){
-            sectAlert.setVisibility(View.VISIBLE);
-            rcView.setVisibility(View.GONE);
-        } else {
-            sectAlert.setVisibility(View.GONE);
-            rcView.setVisibility(View.VISIBLE);
-        }
-        
-        showRcView();
-
         btnTambah.setOnClickListener(view -> {
-            startActivity(new Intent(PengingatObatActivity.this, SetPengingatObatActivity.class));
+            view.setSelected(true);
+            startActivity(new Intent(SymptomActivity.this, AddSymptomActivity.class));
         });
 
-    }
+        bottomNav();
 
-    private void getData(){
-        PengingatObatDao pengingatObatDao = db.pengingatObatDao();
-
-        listPengingat = (ArrayList<PengingatObat>) pengingatObatDao.getAllPengingat();
-    }
-
-    private void showRcView(){
-        pengingatAdapter = new PengingatAdapter(listPengingat, this);
-        pengingatAdapter.notifyDataSetChanged();
-        rcView.setLayoutManager(new LinearLayoutManager(this));
-        rcView.setAdapter(pengingatAdapter);
     }
 
     private void bottomNav(){
@@ -96,22 +63,22 @@ public class PengingatObatActivity extends AppCompatActivity {
 
             switch(item.getItemId()){
                 case R.id.home:
-                    Intent intentHome = new Intent(PengingatObatActivity.this, HomeActivity.class);
+                    Intent intentHome = new Intent(SymptomActivity.this, HomeActivity.class);
                     intentHome.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intentHome);
                     break;
                 case R.id.search:
-                    Intent intentSearch = new Intent(PengingatObatActivity.this, SearchActivity.class);
+                    Intent intentSearch = new Intent(SymptomActivity.this, SearchActivity.class);
                     intentSearch.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intentSearch);
                     break;
                 case R.id.drug:
-                    Intent intentDrug = new Intent(PengingatObatActivity.this, DrugActivity.class);
+                    Intent intentDrug = new Intent(SymptomActivity.this, DrugActivity.class);
                     intentDrug.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intentDrug);
                     break;
                 case R.id.reminder:
-                    Intent intentReminder = new Intent(PengingatObatActivity.this, PengingatObatActivity.class);
+                    Intent intentReminder = new Intent(SymptomActivity.this, PengingatObatActivity.class);
                     intentReminder.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intentReminder);
                     break;
@@ -130,22 +97,24 @@ public class PengingatObatActivity extends AppCompatActivity {
         });
 
         btnSymptom.setOnClickListener(view -> {
-            Intent intent = new Intent(PengingatObatActivity.this, SymptomActivity.class);
+            Intent intent = new Intent(SymptomActivity.this, SymptomActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(intent);
         });
 
         btnDrink.setOnClickListener(view -> {
-            Intent intent = new Intent(PengingatObatActivity.this, DrinkActivity.class);
+            Intent intent = new Intent(SymptomActivity.this, DrinkActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(intent);
         });
 
         btnSleep.setOnClickListener(view -> {
-            Intent intent = new Intent(PengingatObatActivity.this, SleepActivity.class);
+            Intent intent = new Intent(SymptomActivity.this, SleepActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(intent);
         });
+
     }
+
 
 }

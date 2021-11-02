@@ -1,4 +1,4 @@
-package com.one.medheal;
+package com.one.medheal.drug;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -13,11 +13,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.one.medheal.DrinkActivity;
+import com.one.medheal.HomeActivity;
+import com.one.medheal.drugreminder.PengingatObatActivity;
+import com.one.medheal.R;
+import com.one.medheal.SearchActivity;
+import com.one.medheal.sleep.SleepActivity;
 import com.one.medheal.adapter.ObatRvAdapter;
 import com.one.medheal.database.Database;
 import com.one.medheal.database.Obat;
-import com.one.medheal.database.ObatDao;
-import com.one.medheal.model.ObatModel;
+import com.one.medheal.symptom.SymptomActivity;
 
 import java.util.ArrayList;
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EvaluasiSleepActivity"
+    tools:context=".sleep.EvaluasiSleepActivity"
     android:background="@color/blue_002">
 
     <androidx.constraintlayout.widget.ConstraintLayout

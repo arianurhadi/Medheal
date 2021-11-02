@@ -1,4 +1,4 @@
-package com.one.medheal;
+package com.one.medheal.drug;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.one.medheal.R;
 import com.one.medheal.database.Database;
 import com.one.medheal.database.Obat;
 import com.one.medheal.database.ObatDao;

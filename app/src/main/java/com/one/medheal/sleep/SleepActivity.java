@@ -1,16 +1,23 @@
-package com.one.medheal;
+package com.one.medheal.sleep;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.one.medheal.DrinkActivity;
+import com.one.medheal.HomeActivity;
+import com.one.medheal.drugreminder.PengingatObatActivity;
+import com.one.medheal.R;
+import com.one.medheal.SearchActivity;
+import com.one.medheal.drug.DrugActivity;
+import com.one.medheal.symptom.SymptomActivity;
 
-public class SymptomActivity extends AppCompatActivity {
+public class SleepActivity extends AppCompatActivity {
 
     boolean visible = true;
 
@@ -20,12 +27,12 @@ public class SymptomActivity extends AppCompatActivity {
     private LinearLayout btnDrink;
     private LinearLayout btnSleep;
 
-    private ImageView btnTambah;
+    private RelativeLayout setWaktu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_symptom);
+        setContentView(R.layout.activity_sleep);
 
         bottomNavigationView = findViewById(R.id.bottomNavBar);
         bottomSubMenu = findViewById(R.id.bottomSubmenu);
@@ -36,15 +43,14 @@ public class SymptomActivity extends AppCompatActivity {
         bottomNavigationView.setSelectedItemId(R.id.track);
 
         bottomNavigationView.getMenu().getItem(4)
-                .setIcon(R.drawable.ic_symptom)
-                .setTitle("Symptom");
+                .setIcon(R.drawable.ic_sleep)
+                .setTitle("Sleep");
 
+        setWaktu = findViewById(R.id.sectInfo);
 
-        btnTambah = findViewById(R.id.btnTambah);
-
-        btnTambah.setOnClickListener(view -> {
+        setWaktu.setOnClickListener(view -> {
             view.setSelected(true);
-            startActivity(new Intent(SymptomActivity.this, AddSymptomActivity.class));
+            startActivity(new Intent(SleepActivity.this, SettingSleepActivity.class));
         });
 
         bottomNav();
@@ -56,22 +62,22 @@ public class SymptomActivity extends AppCompatActivity {
 
             switch(item.getItemId()){
                 case R.id.home:
-                    Intent intentHome = new Intent(SymptomActivity.this, HomeActivity.class);
+                    Intent intentHome = new Intent(SleepActivity.this, HomeActivity.class);
                     intentHome.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intentHome);
                     break;
                 case R.id.search:
-                    Intent intentSearch = new Intent(SymptomActivity.this, SearchActivity.class);
+                    Intent intentSearch = new Intent(SleepActivity.this, SearchActivity.class);
                     intentSearch.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intentSearch);
                     break;
                 case R.id.drug:
-                    Intent intentDrug = new Intent(SymptomActivity.this, DrugActivity.class);
+                    Intent intentDrug = new Intent(SleepActivity.this, DrugActivity.class);
                     intentDrug.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intentDrug);
                     break;
                 case R.id.reminder:
-                    Intent intentReminder = new Intent(SymptomActivity.this, PengingatObatActivity.class);
+                    Intent intentReminder = new Intent(SleepActivity.this, PengingatObatActivity.class);
                     intentReminder.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intentReminder);
                     break;
@@ -90,24 +96,23 @@ public class SymptomActivity extends AppCompatActivity {
         });
 
         btnSymptom.setOnClickListener(view -> {
-            Intent intent = new Intent(SymptomActivity.this, SymptomActivity.class);
+            Intent intent = new Intent(SleepActivity.this, SymptomActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(intent);
         });
 
         btnDrink.setOnClickListener(view -> {
-            Intent intent = new Intent(SymptomActivity.this, DrinkActivity.class);
+            Intent intent = new Intent(SleepActivity.this, DrinkActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(intent);
         });
 
         btnSleep.setOnClickListener(view -> {
-            Intent intent = new Intent(SymptomActivity.this, SleepActivity.class);
+            Intent intent = new Intent(SleepActivity.this, SleepActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(intent);
         });
 
     }
-
 
 }

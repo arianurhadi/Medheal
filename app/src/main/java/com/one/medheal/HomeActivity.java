@@ -19,14 +19,16 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.one.medheal.database.Database;
 import com.one.medheal.database.Obat;
 import com.one.medheal.database.ObatDao;
-import com.one.medheal.model.ObatModel;
+import com.one.medheal.drug.DrugActivity;
+import com.one.medheal.drugreminder.PengingatObatActivity;
+import com.one.medheal.preferences.Preferences;
+import com.one.medheal.sleep.SleepActivity;
+import com.one.medheal.symptom.SymptomActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
 
 public class HomeActivity extends AppCompatActivity {
 

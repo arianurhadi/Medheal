@@ -8,6 +8,10 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.one.medheal.drug.DrugActivity;
+import com.one.medheal.drugreminder.PengingatObatActivity;
+import com.one.medheal.sleep.SleepActivity;
+import com.one.medheal.symptom.SymptomActivity;
 
 public class DrinkActivity extends AppCompatActivity {
 

@@ -1,117 +1,99 @@
-package com.one.medheal;
+package com.one.medheal.drugreminder;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.one.medheal.adapter.ObatRvAdapter;
+import com.one.medheal.DrinkActivity;
+import com.one.medheal.HomeActivity;
+import com.one.medheal.R;
+import com.one.medheal.SearchActivity;
+import com.one.medheal.adapter.PengingatAdapter;
 import com.one.medheal.database.Database;
-import com.one.medheal.database.Obat;
+import com.one.medheal.database.PengingatObat;
+import com.one.medheal.database.PengingatObatDao;
 import com.one.medheal.drug.DrugActivity;
-import com.one.medheal.drugreminder.PengingatObatActivity;
 import com.one.medheal.sleep.SleepActivity;
 import com.one.medheal.symptom.SymptomActivity;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
-public class SearchActivity extends AppCompatActivity {
+public class PengingatObatActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
     private LinearLayout bottomSubMenu;
     private LinearLayout btnSymptom;
     private LinearLayout btnDrink;
     private LinearLayout btnSleep;
+    private LinearLayout sectAlert;
 
-    private EditText search;
-    private RecyclerView rvObat;
-    private ObatRvAdapter adapter;
+    private ImageView btnTambah;
+
+    private RecyclerView rcView;
+    private PengingatAdapter pengingatAdapter;
     private Database db;
 
-    private ArrayList<Obat> listObat;
-
+    ArrayList<PengingatObat> listPengingat;
     boolean visible = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_search);
+        setContentView(R.layout.activity_menu_pengingat_minum_obat);
 
         bottomNavigationView = findViewById(R.id.bottomNavBar);
         bottomSubMenu = findViewById(R.id.bottomSubmenu);
         btnSymptom = findViewById(R.id.btnSymptom);
         btnDrink = findViewById(R.id.btnDrink);
         btnSleep = findViewById(R.id.btnSleep);
-
-        search = findViewById(R.id.searchView);
-        rvObat = findViewById(R.id.rvObat);
-
-        listObat = new ArrayList<Obat>();
+        sectAlert = findViewById(R.id.sectAlert);
+        btnTambah = findViewById(R.id.btnTambah);
 
         db = Database.getInstance(this);
+        rcView = findViewById(R.id.rvReminderObat);
 
-        bottomNavigationView.setSelectedItemId(R.id.search);
+        bottomNavigationView.setSelectedItemId(R.id.reminder);
 
-        getData();
+        listPengingat = new ArrayList<PengingatObat>();
 
         bottomNav();
+        
+        getData();
 
-        search.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//                filterList(charSequence.toString());
-            }
+        if (listPengingat.isEmpty()){
+            sectAlert.setVisibility(View.VISIBLE);
+            rcView.setVisibility(View.GONE);
+        } else {
+            sectAlert.setVisibility(View.GONE);
+            rcView.setVisibility(View.VISIBLE);
+        }
+        
+        showRcView();
 
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                Log.e("make", editable.toString());
-                filterList(editable.toString());
-            }
+        btnTambah.setOnClickListener(view -> {
+            startActivity(new Intent(PengingatObatActivity.this, SetPengingatObatActivity.class));
         });
 
-        showRv();
     }
 
     private void getData(){
-        listObat = (ArrayList<Obat>) db.obatDao().getAllObat();
+        PengingatObatDao pengingatObatDao = db.pengingatObatDao();
+
+        listPengingat = (ArrayList<PengingatObat>) pengingatObatDao.getAllPengingat();
     }
 
-    private void showRv(){
-        adapter = new ObatRvAdapter(listObat, this, false);
-        rvObat.setLayoutManager(new GridLayoutManager(this, 2));
-        rvObat.setAdapter(adapter);
-    }
-
-    @SuppressLint("NotifyDataSetChanged")
-    private void filterList(String text){
-
-        ArrayList<Obat> listFilter = new ArrayList<Obat>();
-
-        for (Obat data : db.obatDao().getAllObat()){
-            if (data.getNamaObat().toLowerCase(Locale.ROOT).contains(text)){
-                listFilter.add(data);
-            }
-        }
-
-        Log.e("test", listFilter.toString());
-        adapter.setList(listFilter);
-        adapter.notifyDataSetChanged();
+    private void showRcView(){
+        pengingatAdapter = new PengingatAdapter(listPengingat, this);
+        pengingatAdapter.notifyDataSetChanged();
+        rcView.setLayoutManager(new LinearLayoutManager(this));
+        rcView.setAdapter(pengingatAdapter);
     }
 
     private void bottomNav(){
@@ -119,22 +101,22 @@ public class SearchActivity extends AppCompatActivity {
 
             switch(item.getItemId()){
                 case R.id.home:
-                    Intent intentHome = new Intent(SearchActivity.this, HomeActivity.class);
+                    Intent intentHome = new Intent(PengingatObatActivity.this, HomeActivity.class);
                     intentHome.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intentHome);
                     break;
                 case R.id.search:
-                    Intent intentSearch = new Intent(SearchActivity.this, SearchActivity.class);
+                    Intent intentSearch = new Intent(PengingatObatActivity.this, SearchActivity.class);
                     intentSearch.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intentSearch);
                     break;
                 case R.id.drug:
-                    Intent intentDrug = new Intent(SearchActivity.this, DrugActivity.class);
+                    Intent intentDrug = new Intent(PengingatObatActivity.this, DrugActivity.class);
                     intentDrug.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intentDrug);
                     break;
                 case R.id.reminder:
-                    Intent intentReminder = new Intent(SearchActivity.this, PengingatObatActivity.class);
+                    Intent intentReminder = new Intent(PengingatObatActivity.this, PengingatObatActivity.class);
                     intentReminder.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intentReminder);
                     break;
@@ -153,23 +135,22 @@ public class SearchActivity extends AppCompatActivity {
         });
 
         btnSymptom.setOnClickListener(view -> {
-            Intent intent = new Intent(SearchActivity.this, SymptomActivity.class);
+            Intent intent = new Intent(PengingatObatActivity.this, SymptomActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(intent);
         });
 
         btnDrink.setOnClickListener(view -> {
-            Intent intent = new Intent(SearchActivity.this, DrinkActivity.class);
+            Intent intent = new Intent(PengingatObatActivity.this, DrinkActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(intent);
         });
 
         btnSleep.setOnClickListener(view -> {
-            Intent intent = new Intent(SearchActivity.this, SleepActivity.class);
+            Intent intent = new Intent(PengingatObatActivity.this, SleepActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(intent);
         });
-
     }
 
 }

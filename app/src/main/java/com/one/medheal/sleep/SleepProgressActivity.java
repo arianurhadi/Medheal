@@ -1,14 +1,16 @@
-package com.one.medheal;
+package com.one.medheal.sleep;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class DrugCatActivity extends AppCompatActivity {
+import com.one.medheal.R;
+
+public class SleepProgressActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_drug_cat);
+        setContentView(R.layout.activity_sleep_progress);
     }
 }

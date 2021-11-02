@@ -3,10 +3,10 @@ package com.one.medheal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
+
+import com.one.medheal.preferences.Preferences;
 
 public class SplashActivity extends AppCompatActivity {
 

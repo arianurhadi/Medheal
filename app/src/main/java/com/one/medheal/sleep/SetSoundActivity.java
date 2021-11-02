@@ -1,14 +1,16 @@
-package com.one.medheal;
+package com.one.medheal.sleep;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class EditSymptomActivity extends AppCompatActivity {
+import com.one.medheal.R;
+
+public class SetSoundActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_symptom);
+        setContentView(R.layout.activity_set_sound);
     }
 }

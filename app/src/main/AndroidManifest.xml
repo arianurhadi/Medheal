@@ -12,20 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Medheal">
         <activity
-            android:name=".SetPengingatObatActivity"
+            android:name=".drugreminder.SetPengingatObatActivity"
             android:exported="false" />
         <activity
-            android:name=".EditPengingatObatActivity"
+            android:name=".drugreminder.EditPengingatObatActivity"
             android:exported="false" />
         <activity
-            android:name=".PengingatObatActivity"
+            android:name=".drugreminder.PengingatObatActivity"
             android:exported="false" />
         <activity
             android:name=".SearchActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".DrugCatActivity"
+            android:name=".drug.DrugCatActivity"
             android:exported="false" />
         <activity
             android:name=".NewsDetailActivity"
@@ -34,22 +34,22 @@
             android:name=".DrinkActivity"
             android:exported="false" />
         <activity
-            android:name=".EvaluasiSleepActivity"
+            android:name=".sleep.EvaluasiSleepActivity"
             android:exported="false" />
         <activity
-            android:name=".SetSoundActivity"
+            android:name=".sleep.SetSoundActivity"
             android:exported="false" />
         <activity
-            android:name=".WakeUpActivity"
+            android:name=".sleep.WakeUpActivity"
             android:exported="false" />
         <activity
-            android:name=".SleepProgressActivity"
+            android:name=".sleep.SleepProgressActivity"
             android:exported="false" />
         <activity
-            android:name=".SettingSleepActivity"
+            android:name=".sleep.SettingSleepActivity"
             android:exported="false" />
         <activity
-            android:name=".SleepActivity"
+            android:name=".sleep.SleepActivity"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"
@@ -70,19 +70,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DetailDrugActivity"
+            android:name=".drug.DetailDrugActivity"
             android:exported="false" />
         <activity
-            android:name=".DrugActivity"
+            android:name=".drug.DrugActivity"
             android:exported="false" />
         <activity
-            android:name=".EditSymptomActivity"
+            android:name=".symptom.EditSymptomActivity"
             android:exported="false" />
         <activity
-            android:name=".AddSymptomActivity"
+            android:name=".symptom.AddSymptomActivity"
             android:exported="false" />
         <activity
-            android:name=".SymptomActivity"
+            android:name=".symptom.SymptomActivity"
             android:exported="false" />
         <activity
             android:name=".SettingActivity"

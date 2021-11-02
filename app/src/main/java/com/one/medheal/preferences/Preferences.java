@@ -1,4 +1,4 @@
-package com.one.medheal;
+package com.one.medheal.preferences;
 
 import android.content.Context;
 import android.content.SharedPreferences;

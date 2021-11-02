@@ -10,9 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.one.medheal.EditPengingatObatActivity;
+import com.one.medheal.drugreminder.EditPengingatObatActivity;
 import com.one.medheal.R;
-import com.one.medheal.database.Obat;
 import com.one.medheal.database.PengingatObat;
 
 import java.util.ArrayList;
