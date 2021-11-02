@@ -59,6 +59,11 @@ public class DrinkActivity extends AppCompatActivity {
                     intentDrug.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intentDrug);
                     break;
+                case R.id.reminder:
+                    Intent intentReminder = new Intent(DrinkActivity.this, PengingatObatActivity.class);
+                    intentReminder.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intentReminder);
+                    break;
                 case R.id.track:
                     if (visible){
                         bottomSubMenu.setVisibility(View.VISIBLE);

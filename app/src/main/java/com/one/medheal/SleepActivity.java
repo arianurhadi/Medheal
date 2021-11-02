@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -18,6 +20,8 @@ public class SleepActivity extends AppCompatActivity {
     private LinearLayout btnSymptom;
     private LinearLayout btnDrink;
     private LinearLayout btnSleep;
+
+    private RelativeLayout setWaktu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,13 @@ public class SleepActivity extends AppCompatActivity {
         bottomNavigationView.getMenu().getItem(4)
                 .setIcon(R.drawable.ic_sleep)
                 .setTitle("Sleep");
+
+        setWaktu = findViewById(R.id.sectInfo);
+
+        setWaktu.setOnClickListener(view -> {
+            view.setSelected(true);
+            startActivity(new Intent(SleepActivity.this, SettingSleepActivity.class));
+        });
 
         bottomNav();
 
@@ -58,6 +69,11 @@ public class SleepActivity extends AppCompatActivity {
                     Intent intentDrug = new Intent(SleepActivity.this, DrugActivity.class);
                     intentDrug.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intentDrug);
+                    break;
+                case R.id.reminder:
+                    Intent intentReminder = new Intent(SleepActivity.this, PengingatObatActivity.class);
+                    intentReminder.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intentReminder);
                     break;
                 case R.id.track:
                     if (visible){

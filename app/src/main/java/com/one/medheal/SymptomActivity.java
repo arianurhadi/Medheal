@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -18,6 +19,8 @@ public class SymptomActivity extends AppCompatActivity {
     private LinearLayout btnSymptom;
     private LinearLayout btnDrink;
     private LinearLayout btnSleep;
+
+    private ImageView btnTambah;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,14 @@ public class SymptomActivity extends AppCompatActivity {
         bottomNavigationView.getMenu().getItem(4)
                 .setIcon(R.drawable.ic_symptom)
                 .setTitle("Symptom");
+
+
+        btnTambah = findViewById(R.id.btnTambah);
+
+        btnTambah.setOnClickListener(view -> {
+            view.setSelected(true);
+            startActivity(new Intent(SymptomActivity.this, AddSymptomActivity.class));
+        });
 
         bottomNav();
 
@@ -58,6 +69,11 @@ public class SymptomActivity extends AppCompatActivity {
                     Intent intentDrug = new Intent(SymptomActivity.this, DrugActivity.class);
                     intentDrug.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intentDrug);
+                    break;
+                case R.id.reminder:
+                    Intent intentReminder = new Intent(SymptomActivity.this, PengingatObatActivity.class);
+                    intentReminder.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intentReminder);
                     break;
                 case R.id.track:
                     if (visible){

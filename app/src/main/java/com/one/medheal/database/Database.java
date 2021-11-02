@@ -5,7 +5,7 @@ import android.content.Context;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@androidx.room.Database(entities = {User.class, Obat.class}, version = 2)
+@androidx.room.Database(entities = {User.class, Obat.class, PengingatObat.class}, version = 4)
 public abstract class Database extends RoomDatabase {
 
     private static final String DB_NAME = "medheal_db";
@@ -23,5 +23,6 @@ public abstract class Database extends RoomDatabase {
 
     public abstract UserDao userDao();
     public abstract ObatDao obatDao();
+    public abstract PengingatObatDao pengingatObatDao();
 
 }

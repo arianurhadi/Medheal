@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_card_10_outline_green"
+    android:layout_marginTop="20dp"
+    android:layout_marginStart="18dp"
+    android:layout_marginEnd="18dp"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp"
+    android:paddingStart="18dp"
+    android:paddingEnd="18dp">
+
+    <TextView
+        android:id="@+id/tvNamaObat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama Obat"
+        android:textSize="14sp"
+        android:textColor="@color/blue_002"/>
+
+    <LinearLayout
+        android:id="@+id/sectWaktu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvNamaObat"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/textWaktu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Waktu"
+            android:layout_below="@id/tvNamaObat"
+            android:textSize="14sp"
+            android:textColor="@color/blue_002" />
+
+       <LinearLayout
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_weight="2">
+           <ImageView
+               android:id="@+id/imgTime"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/ic_history" />
+
+           <TextView
+               android:id="@+id/tvWaktu"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="00.00 || 00.00"
+               android:textSize="14sp"
+               android:textColor="@color/blue_002"
+               android:layout_marginStart="5dp"/>
+       </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sectFrek"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sectWaktu"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/textFrek"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Frekuensi"
+            android:textSize="14sp"
+            android:textColor="@color/blue_002"
+            android:layout_below="@id/textWaktu" />
+
+        <TextView
+            android:id="@+id/tvFrek"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text=" frekuensi"
+            android:textSize="14sp"
+            android:textColor="@color/blue_002" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sectDurasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sectFrek"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/textDurasi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Durasi"
+            android:textSize="14sp"
+            android:textColor="@color/blue_002"/>
+
+        <TextView
+            android:id="@+id/tvDurasi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="DD MM YYYY - DD MM YYYY"
+            android:textSize="14sp"
+            android:textColor="@color/blue_002" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sectInventaris"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sectDurasi"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/textInventaris"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Inventaris"
+            android:textSize="14sp"
+            android:textColor="@color/blue_002"
+            android:layout_below="@id/textDurasi" />
+
+        <TextView
+            android:id="@+id/tvInventaris"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Inventaris"
+            android:textSize="14sp"
+            android:textColor="@color/blue_002"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sectCatatan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sectInventaris"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/textCatatan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Catatan"
+            android:textSize="14sp"
+            android:textColor="@color/blue_002"
+            android:layout_below="@id/textDurasi" />
+
+        <TextView
+            android:id="@+id/tvCatatan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="catatan"
+            android:textSize="14sp"
+            android:textColor="@color/blue_002"/>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/swActive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:thumbTint="#E74C3C"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"/>
+
+</RelativeLayout>

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.one.medheal">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,8 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Medheal">
         <activity
-            android:name=".SearchActivity"
+            android:name=".SetPengingatObatActivity"
             android:exported="false" />
+        <activity
+            android:name=".EditPengingatObatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PengingatObatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SearchActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing" />
         <activity
             android:name=".DrugCatActivity"
             android:exported="false" />

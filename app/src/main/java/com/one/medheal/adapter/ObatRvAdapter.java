@@ -32,6 +32,11 @@ public class ObatRvAdapter extends RecyclerView.Adapter<ObatRvAdapter.ViewHolder
         this.fav = fav;
     }
 
+    public void setList(ArrayList<Obat> list){
+        listObat.clear();
+        this.listObat = list;
+    }
+
     @NonNull
     @Override
     public ObatRvAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

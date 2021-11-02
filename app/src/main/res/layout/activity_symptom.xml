@@ -80,7 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/sectSearch"
-                tools:listitem="@layout/list_item_symptom"/>
+                tools:listitem="@layout/list_item_symptom" />
 
             <LinearLayout
                 android:id="@+id/sectTvRiwayat"

@@ -25,15 +25,6 @@
                 android:background="@drawable/bg_bottom_nav"
                 android:backgroundTint="@color/green_002">
 
-                <ImageView
-                    android:id="@+id/btnTambah"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="29dp"
-                    android:src="@drawable/ic_plus" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -83,70 +74,70 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/sectProgress"
                 android:layout_centerHorizontal="true"
-                android:paddingStart="33dp"
-                android:paddingEnd="33dp"
                 android:layout_marginTop="80dp"
                 android:layout_marginBottom="17dp"
-                android:elevation="4dp">
+                android:elevation="4dp"
+                android:paddingStart="33dp"
+                android:paddingEnd="33dp">
 
                 <ImageView
                     android:id="@+id/icSleep"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_sleep_black"/>
+                    android:src="@drawable/ic_sleep_black" />
 
                 <TextView
                     android:id="@+id/tvText1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toEndOf="@id/icSleep"
                     android:layout_alignTop="@id/icSleep"
                     android:layout_alignBottom="@id/icSleep"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/icSleep"
                     android:text="Waktu Tidur"
-                    android:textSize="20sp"
                     android:textColor="@color/black"
-                    android:layout_marginStart="10dp"/>
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tvJam"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
                     android:text="00:00"
-                    android:textSize="20sp"
                     android:textColor="@color/black"
-                    android:layout_alignParentEnd="true"/>
+                    android:textSize="20sp" />
 
                 <ImageView
                     android:id="@+id/icAlarm"
                     android:layout_width="28dp"
                     android:layout_height="29dp"
-                    android:src="@drawable/ic_history"
                     android:layout_below="@id/icSleep"
-                    android:layout_marginTop="30dp"/>
+                    android:layout_marginTop="30dp"
+                    android:src="@drawable/ic_history" />
 
                 <TextView
                     android:id="@+id/tvText2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Alarm"
-                    android:textSize="20sp"
-                    android:textColor="@color/black"
-                    android:layout_toEndOf="@id/icAlarm"
-                    android:layout_alignBottom="@id/icAlarm"
                     android:layout_alignTop="@id/icAlarm"
-                    android:layout_marginStart="10dp"/>
+                    android:layout_alignBottom="@id/icAlarm"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/icAlarm"
+                    android:text="Alarm"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tvAlarm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="00:00"
-                    android:textSize="20sp"
-                    android:textColor="@color/black"
                     android:layout_below="@id/tvJam"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginTop="30dp"/>
+                    android:layout_marginTop="30dp"
+                    android:text="00:00"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
             </RelativeLayout>
 
@@ -154,20 +145,20 @@
                 android:id="@+id/btnTidur"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tidur Sekarang"
-                android:textSize="18sp"
-                android:textColor="@color/black"
+                android:layout_below="@id/sectInfo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="55dp"
                 android:background="@drawable/bg_card_10"
                 android:backgroundTint="@color/white"
                 android:elevation="4dp"
                 android:paddingStart="29dp"
-                android:paddingEnd="29dp"
                 android:paddingTop="10dp"
+                android:paddingEnd="29dp"
                 android:paddingBottom="10dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="55dp"
-                android:layout_below="@id/sectInfo"
-                android:textAllCaps="false"/>
+                android:text="Tidur Sekarang"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
         </RelativeLayout>
 

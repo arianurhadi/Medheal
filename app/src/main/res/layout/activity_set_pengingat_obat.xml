@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SetPengingatObatActivity"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/sectTitle"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:background="@drawable/bg_bottom_nav"
+            android:backgroundTint="@color/green_002"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="22dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="22dp"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Tambah Pengingat Obat"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/sectinput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:padding="13dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginEnd="22dp"
+            android:background="@drawable/bg_card_10_outline_green"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/sectTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="ExtraText">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Setel Pengingat"
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/inputNamaObat"
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:background="@drawable/bg_card_10_outline_green"
+                android:hint="Nama Obat"
+                android:paddingStart="9dp"
+                android:paddingEnd="9dp"
+                android:layout_marginTop="21dp"
+                android:textSize="14sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <EditText
+                android:id="@+id/inputWaktu"
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:background="@drawable/bg_card_10_outline_green"
+                android:hint="Setel Waktu"
+                android:layout_marginTop="21dp"
+                android:paddingStart="9dp"
+                android:paddingEnd="9dp"
+                android:textSize="14sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <EditText
+                android:id="@+id/inputFrekuensi"
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:layout_below="@id/editNumHp"
+                android:background="@drawable/bg_card_10_outline_green"
+                android:hint="Frekuensi"
+                android:layout_marginTop="21dp"
+                android:paddingStart="9dp"
+                android:paddingEnd="9dp"
+                android:textSize="14sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+            <EditText
+                android:id="@+id/inputInventaris"
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:layout_below="@id/editNumHp"
+                android:layout_marginTop="21dp"
+                android:background="@drawable/bg_card_10_outline_green"
+                android:hint="Inventaris"
+                android:paddingStart="9dp"
+                android:paddingEnd="9dp"
+                android:textSize="14sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+            <EditText
+                android:id="@+id/inputDurasi"
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:background="@drawable/bg_card_10_outline_green"
+                android:hint="Durasi"
+                android:layout_marginTop="21dp"
+                android:paddingStart="9dp"
+                android:paddingEnd="9dp"
+                android:textSize="14sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <EditText
+                android:id="@+id/inputCatatan"
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:layout_marginTop="21dp"
+                android:layout_marginBottom="21dp"
+                android:background="@drawable/bg_card_10_outline_green"
+                android:hint="Catatan"
+                android:paddingStart="9dp"
+                android:paddingEnd="9dp"
+                android:textSize="14sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSimpan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Simpan"
+            android:textAllCaps="false"
+            android:textSize="22sp"
+            android:paddingStart="17dp"
+            android:paddingEnd="17dp"
+            android:background="@drawable/bg_card_10"
+            android:backgroundTint="@color/white"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="81dp"
+            app:layout_constraintTop_toBottomOf="@id/sectinput"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

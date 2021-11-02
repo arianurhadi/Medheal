@@ -25,12 +25,14 @@
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_drink.xml" value="0.16" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_drug.xml" value="0.25" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_drug_cat.xml" value="0.16" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_edit_pengingat_obat.xml" value="0.14945652173913043" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_edit_symptom.xml" value="0.2" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_evaluasi_sleep.xml" value="0.2" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_forgotpassword.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_login.xml" value="0.18" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_menu_pengingat_minum_obat.xml" value="0.22" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_menu_search.xml" value="0.25" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_news.xml" value="0.22" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_news_detail.xml" value="0.22" />
@@ -38,6 +40,7 @@
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_onboarding.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_opening.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_register.xml" value="0.2" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_set_pengingat_obat.xml" value="0.14" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_set_sound.xml" value="0.15489130434782608" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_setting.xml" value="0.22" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/activity_setting_sleep.xml" value="0.16" />
@@ -57,9 +60,11 @@
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/list_item_cat_drug.xml" value="0.25" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/list_item_drink.xml" value="0.33" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/list_item_obat.xml" value="0.1358695652173913" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/list_item_pengingat_obat.xml" value="0.25" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/list_item_redaksi.xml" value="0.38694638694638694" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/list_item_sound.xml" value="0.5" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/list_item_symptom.xml" value="0.22" />
+        <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/pengingat_minum_obat.xml" value="0.25" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/sidebar_header.xml" value="0.13080601092896174" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/layout/simpan_drink_layout.xml" value="0.2" />
         <entry key="..\:/Users/user/Documents/Medheal/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20416666666666666" />

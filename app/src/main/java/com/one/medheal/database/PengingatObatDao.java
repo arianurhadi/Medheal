@@ -6,16 +6,18 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import java.util.List;
+
 @Dao
-public interface UserDao {
+public interface PengingatObatDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertUser(User user);
+    void insertPengingat(PengingatObat pengingatObat);
 
-    @Query("SELECT * FROM tUser")
-    User getUser();
+    @Query("SELECT * FROM tPengingatObat")
+    List<PengingatObat> getAllPengingat();
 
     @Update
-    void updateUser(User user);
+    void updatePengingat(PengingatObat pengingatObat);
 
 }

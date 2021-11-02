@@ -22,6 +22,9 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText inputPass;
     private EditText inputConPass;
 
+    private AppCompatButton btnSkip;
+    private AppCompatButton btnLogin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,9 @@ public class RegisterActivity extends AppCompatActivity {
         inputPass = findViewById(R.id.inputPassword);
         inputConPass = findViewById(R.id.inputConfPass);
         AppCompatButton btnRegister = findViewById(R.id.btnRegister);
+
+        btnLogin = findViewById(R.id.btnLogin);
+        btnSkip = findViewById(R.id.btnSkip);
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
 
@@ -51,6 +57,8 @@ public class RegisterActivity extends AppCompatActivity {
                         }
                     });
         });
+
+        btnClick();
 
     }
     private boolean validate(){
@@ -73,6 +81,20 @@ public class RegisterActivity extends AppCompatActivity {
             validate = false;
         }
         return validate;
+    }
+
+    private void btnClick(){
+        btnLogin.setOnClickListener(view -> {
+            Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+            startActivity(intent);
+            finish();
+        });
+
+        btnSkip.setOnClickListener(view -> {
+            Intent intent = new Intent(RegisterActivity.this,HomeActivity.class);
+            startActivity(intent);
+            finish();
+        });
     }
 
 }

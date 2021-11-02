@@ -1,111 +1,94 @@
 package com.one.medheal;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.one.medheal.adapter.ObatRvAdapter;
+import com.one.medheal.adapter.PengingatAdapter;
 import com.one.medheal.database.Database;
-import com.one.medheal.database.Obat;
-import com.one.medheal.database.ObatDao;
-import com.one.medheal.model.ObatModel;
+import com.one.medheal.database.PengingatObat;
+import com.one.medheal.database.PengingatObatDao;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class DrugActivity extends AppCompatActivity {
-
-    boolean visible = true;
+public class PengingatObatActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
     private LinearLayout bottomSubMenu;
     private LinearLayout btnSymptom;
     private LinearLayout btnDrink;
     private LinearLayout btnSleep;
+    private LinearLayout sectAlert;
 
-    private RecyclerView rvObat;
-    private RecyclerView rvObatFav;
-    private ArrayList<Obat> listObat;
-    private ArrayList<Obat> listFavObat;
-    private ObatRvAdapter obatAdapter;
-    private ObatRvAdapter favObatAdapter;
+    private ImageView btnTambah;
+
+    private RecyclerView rcView;
+    private PengingatAdapter pengingatAdapter;
     private Database db;
 
-    private TextView tvJmlObat;
+    ArrayList<PengingatObat> listPengingat;
+    boolean visible = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_drug);
+        setContentView(R.layout.activity_menu_pengingat_minum_obat);
 
         bottomNavigationView = findViewById(R.id.bottomNavBar);
         bottomSubMenu = findViewById(R.id.bottomSubmenu);
         btnSymptom = findViewById(R.id.btnSymptom);
         btnDrink = findViewById(R.id.btnDrink);
         btnSleep = findViewById(R.id.btnSleep);
+        sectAlert = findViewById(R.id.sectAlert);
+        btnTambah = findViewById(R.id.btnTambah);
 
-        TextView tvBelumAdaFav = findViewById(R.id.tvBelumAda);
-        tvJmlObat = findViewById(R.id.tvJmlObat);
         db = Database.getInstance(this);
+        rcView = findViewById(R.id.rvReminderObat);
 
-        rvObat = findViewById(R.id.rvObat);
-        rvObatFav = findViewById(R.id.rvObatku);
-        listObat = new ArrayList<Obat>();
-        listFavObat = new ArrayList<Obat>();
+        bottomNavigationView.setSelectedItemId(R.id.reminder);
 
-//        init();
-        listObat = (ArrayList<Obat>) db.obatDao().getAllObat();
-        filterFavObat();
-
-        bottomNavigationView.setSelectedItemId(R.id.drug);
-
-        tvJmlObat.setText(listObat.size() + " Obat");
+        listPengingat = new ArrayList<PengingatObat>();
 
         bottomNav();
+        
+        getData();
 
-        showObat();
-
-        if (listFavObat.isEmpty()){
-            rvObatFav.setVisibility(View.GONE);
-            tvBelumAdaFav.setVisibility(View.VISIBLE);
-        }else {
-            tvBelumAdaFav.setVisibility(View.GONE);
-            rvObatFav.setVisibility(View.VISIBLE);
-            showFavorite();
+        if (listPengingat.isEmpty()){
+            sectAlert.setVisibility(View.VISIBLE);
+            rcView.setVisibility(View.GONE);
+        } else {
+            sectAlert.setVisibility(View.GONE);
+            rcView.setVisibility(View.VISIBLE);
         }
+        
+        showRcView();
+
+        btnTambah.setOnClickListener(view -> {
+            startActivity(new Intent(PengingatObatActivity.this, SetPengingatObatActivity.class));
+        });
 
     }
 
-    @SuppressLint("NotifyDataSetChanged")
-    private void showObat(){
-        obatAdapter = new ObatRvAdapter(listObat, this, false);
-        rvObat.setLayoutManager(new GridLayoutManager(this, 2));
-        rvObat.setAdapter(obatAdapter);
-        obatAdapter.notifyDataSetChanged();
+    private void getData(){
+        PengingatObatDao pengingatObatDao = db.pengingatObatDao();
+
+        listPengingat = (ArrayList<PengingatObat>) pengingatObatDao.getAllPengingat();
     }
 
-    @SuppressLint("NotifyDataSetChanged")
-    private void showFavorite(){
-        favObatAdapter = new ObatRvAdapter(listFavObat, this, true);
-        rvObatFav.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
-        rvObatFav.setAdapter(favObatAdapter);
-        favObatAdapter.notifyDataSetChanged();
-    }
-
-    private void filterFavObat(){
-        for (Obat data : listObat) {
-            if (data.getFavObat()){
-                listFavObat.add(data);
-            }
-        }
+    private void showRcView(){
+        pengingatAdapter = new PengingatAdapter(listPengingat, this);
+        pengingatAdapter.notifyDataSetChanged();
+        rcView.setLayoutManager(new LinearLayoutManager(this));
+        rcView.setAdapter(pengingatAdapter);
     }
 
     private void bottomNav(){
@@ -113,22 +96,22 @@ public class DrugActivity extends AppCompatActivity {
 
             switch(item.getItemId()){
                 case R.id.home:
-                    Intent intentHome = new Intent(DrugActivity.this, HomeActivity.class);
+                    Intent intentHome = new Intent(PengingatObatActivity.this, HomeActivity.class);
                     intentHome.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intentHome);
                     break;
                 case R.id.search:
-                    Intent intentSearch = new Intent(DrugActivity.this, SearchActivity.class);
+                    Intent intentSearch = new Intent(PengingatObatActivity.this, SearchActivity.class);
                     intentSearch.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intentSearch);
                     break;
                 case R.id.drug:
-                    Intent intentDrug = new Intent(DrugActivity.this, DrugActivity.class);
+                    Intent intentDrug = new Intent(PengingatObatActivity.this, DrugActivity.class);
                     intentDrug.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intentDrug);
                     break;
                 case R.id.reminder:
-                    Intent intentReminder = new Intent(DrugActivity.this, PengingatObatActivity.class);
+                    Intent intentReminder = new Intent(PengingatObatActivity.this, PengingatObatActivity.class);
                     intentReminder.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intentReminder);
                     break;
@@ -147,19 +130,19 @@ public class DrugActivity extends AppCompatActivity {
         });
 
         btnSymptom.setOnClickListener(view -> {
-            Intent intent = new Intent(DrugActivity.this, SymptomActivity.class);
+            Intent intent = new Intent(PengingatObatActivity.this, SymptomActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(intent);
         });
 
         btnDrink.setOnClickListener(view -> {
-            Intent intent = new Intent(DrugActivity.this, DrinkActivity.class);
+            Intent intent = new Intent(PengingatObatActivity.this, DrinkActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(intent);
         });
 
         btnSleep.setOnClickListener(view -> {
-            Intent intent = new Intent(DrugActivity.this, SleepActivity.class);
+            Intent intent = new Intent(PengingatObatActivity.this, SleepActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(intent);
         });

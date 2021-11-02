@@ -85,7 +85,9 @@ public class HomeActivity extends AppCompatActivity {
         //bottom navgiation controller
         bottomNav();
 
-        getInitData();
+        if(db.obatDao().getAllObat().size() == 0){
+            getInitData();
+        }
 
     }
 
@@ -111,7 +113,7 @@ public class HomeActivity extends AppCompatActivity {
                 case R.id.signOut:
                     Preferences.setLogged(HomeActivity.this, false);
                     auth.signOut();
-                    startActivity(new Intent(HomeActivity.this, SplashActivity.class));
+                    startActivity(new Intent(HomeActivity.this, LoginActivity.class));
                     finish();
                     break;
             }
@@ -138,6 +140,11 @@ public class HomeActivity extends AppCompatActivity {
                     Intent intentDrug = new Intent(HomeActivity.this, DrugActivity.class);
                     intentDrug.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intentDrug);
+                    break;
+                case R.id.reminder:
+                    Intent intentReminder = new Intent(HomeActivity.this, PengingatObatActivity.class);
+                    intentReminder.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intentReminder);
                     break;
                 case R.id.track:
                     if (visible){

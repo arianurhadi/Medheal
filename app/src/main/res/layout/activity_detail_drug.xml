@@ -53,7 +53,6 @@
             android:id="@+id/imgObat"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:background="@color/grey_001"
             android:layout_below="@id/sectTitle"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"/>

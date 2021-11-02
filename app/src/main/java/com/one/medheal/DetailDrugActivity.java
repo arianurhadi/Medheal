@@ -2,6 +2,7 @@ package com.one.medheal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,6 +25,13 @@ public class DetailDrugActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_drug);
+
+        ImageView btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(view -> {
+            view.setSelected(true);
+            startActivity(new Intent(DetailDrugActivity.this, DrugActivity.class));
+            finish();
+        });
 
         Obat obat = (Obat) getIntent().getSerializableExtra("obat");
 //        int position = getIntent().getIntExtra("position", 0);
